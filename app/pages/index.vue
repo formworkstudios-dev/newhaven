@@ -1,11 +1,16 @@
-<script setup lang="ts"></script>
+<script
+  setup
+  lang="ts"
+></script>
 
 <template>
   <div>
-    <UContainer>
-
-      <HomeHero />
-    </UContainer>
+    <HomeHero />
+    <HomeEvents />
+    <HomeNextGen />
+    <HomeVision />
+    <HomeVisit />
+    <HomeRound />
   </div>
 </template>
 
