@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+e
+<script
+  setup
+  lang="ts"
+></script>
 
 <template>
   <div>

@@ -15,7 +15,7 @@ import EventCard from './EventCard.vue';
       <div class="flex flex-col md:flex-row gap-12 items-stretch overflow-visible">
         <!-- Left: Heading and Description -->
         <div class="flex-1 flex flex-col justify-start md:items-start items-center gap-4 relative overflow-visible">
-          <h2 class="text-left w-full text-4xl">Find Your Home <span class="text-secondary">Here</span>.</h2>
+          <h2 class="text-left w-full text-4xl">Find Your Home <span class="text-secondary">With Us</span>.</h2>
           <div class="text-left max-w-xl text-xl">
             New Haven Ministries is more than a church—we're a family united by faith, committed to growing together and
             making a difference in our community and beyond.
@@ -36,12 +36,12 @@ import EventCard from './EventCard.vue';
             />
           </svg>
           <div
-            class="bg-primary/10  px-1 flex flex-row items-end gap-1 self-center md:self-start text-primary hover:text-secondary transition-colors cursor-pointer z-10"
+            class="bg-primary/10 px-2 flex flex-row items-end gap-1 self-center md:self-start text-primary hover:text-secondary transition-colors cursor-pointer z-10 font-mono mt-4 hover:bg-primary/20 hover:shadow-md hover:-translate-y-0.5 transform hover:border-secondary/50 border border-transparent"
           >
             <span>Get Involved</span>
             <UIcon
               name="i-mdi-arrow-top-right"
-              class="text-lg translate-y-[-3px]"
+              class="text-lg mb-1.5"
             />
           </div>
         </div>

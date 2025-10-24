@@ -6,7 +6,7 @@ const appConfig = useAppConfig()
 const siteName = appConfig.siteName
 const siteLogo = appConfig.siteLogo
 
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 const isMobileMenuOpen = ref(false)
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
@@ -14,10 +14,43 @@ const toggleMobileMenu = () => {
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
 }
+
+// Navbar hide/show on scroll (client-only)
+const showNav = ref(true)
+let lastScrollY = 0
+function handleScroll() {
+  if (typeof window === 'undefined') return;
+  const currentY = window.scrollY
+  if (currentY < 10) {
+    showNav.value = true
+    lastScrollY = currentY
+    return
+  }
+  if (currentY > lastScrollY + 4) {
+    showNav.value = false
+  } else if (currentY < lastScrollY - 4) {
+    showNav.value = true
+  }
+  lastScrollY = currentY
+}
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    lastScrollY = window.scrollY
+    window.addEventListener('scroll', handleScroll, { passive: true })
+  }
+})
+onUnmounted(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('scroll', handleScroll)
+  }
+})
 </script>
 
 <template>
-  <nav class="w-full border-none border-stone-500 bg-stone-950/10 text-gray-100 fixed z-[1100]">
+  <nav
+    class="w-full border-none border-stone-500 bg-stone-950/10 text-gray-100 fixed z-[1100] transition-transform duration-300"
+    :class="showNav ? 'translate-y-0' : '-translate-y-full'"
+  >
     <div
       id="nav-blob"
       class="flex items-center justify-between p-4"

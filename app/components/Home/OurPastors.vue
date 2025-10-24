@@ -1,0 +1,26 @@
+<script
+  setup
+  lang="ts"
+></script>
+
+<template>
+  <section class="w-full py-20 bg-stone-950/80 border-t border-secondary/20">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-20 px-6">
+      <img
+        src="/new-haven-ministries-richmondhill-mattkat.jpg"
+        alt="Pastors Matthew and Kathy Singh"
+        class="w-full md:w-1/2 h-[340px] object-cover border border-secondary/30"
+      />
+      <div class="flex-1 flex flex-col justify-center items-start">
+        <h2 class="text-4xl font-bold text-secondary mb-2">Our Pastors</h2>
+        <h3 class="text-2xl font-semibold text-gray-100 mb-4">Matthew and Kathy Singh</h3>
+        <p class="text-lg text-gray-300 max-w-xl">
+          Pastors Matthew and Kathy Singh have been in ministry for over 30 years and are the lead and founding pastors
+          of New Haven Ministries
+        </p>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped></style>

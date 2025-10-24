@@ -10,7 +10,8 @@
     <HomeNextGen />
     <HomeVision />
     <HomeVisit />
-    <HomeRound />
+    <HomeOurPastors />
+    <!-- <HomeRound /> -->
   </div>
 </template>
 
