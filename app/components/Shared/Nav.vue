@@ -100,6 +100,11 @@ onUnmounted(() => {
           class="nav-link"
           exact-active-class="nav-link-active"
         >Contact</NuxtLink>
+        <NuxtLink
+          to="/PlanYourVisit"
+          class="nav-link"
+          exact-active-class="nav-link-active"
+        >Plan Your Visit</NuxtLink>
         <NuxtLink to="/donate">
           <UButton class="font-bold">GIVE TODAY</UButton>
         </NuxtLink>
@@ -137,6 +142,10 @@ onUnmounted(() => {
           to="/contact"
           @click="closeMobileMenu"
         >Contact</NuxtLink>
+        <NuxtLink
+          to="/PlanYourVisit"
+          @click="closeMobileMenu"
+        >Plan Your Visit</NuxtLink>
         <NuxtLink
           to="/donate"
           @click="closeMobileMenu"

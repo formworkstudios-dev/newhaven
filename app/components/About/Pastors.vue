@@ -1,11 +1,8 @@
-<script
-  setup
-  lang="ts"
-></script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
-    <NextGenHero />
+    Component: About/Pastors
   </div>
 </template>
 

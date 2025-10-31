@@ -38,7 +38,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="border-b border-secondary/10 relative overflow-hidden h-[800px]">
+  <div
+    class="relative overflow-hidden h-[800px]"
+    style="border-bottom: 6px solid; border-image: linear-gradient(to right, var(--color-primary), #1e293b) 1;"
+  >
     <div
       class="pointer-events-none absolute left-0 top-0 w-full h-[200px] z-20"
       style="background: linear-gradient(to bottom, #0c0a09 0%, transparent 100%);"

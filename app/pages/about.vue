@@ -1,9 +1,16 @@
-<script setup lang="ts"></script>
+<script
+  setup
+  lang="ts"
+></script>
 
 <template>
   <UContainer>
 
-    Page: about
+    <AboutMission />
+    <AboutValues />
+    <AboutVision />
+    <AboutPastors />
+    <AboutHistory />
 
   </UContainer>
 </template>

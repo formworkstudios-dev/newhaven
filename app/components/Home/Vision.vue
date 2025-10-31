@@ -4,9 +4,7 @@
 ></script>
 
 <template>
-  <div
-    class="w-full h-[800px] relative overflow-hidden flex items-center justify-center py-40 border-t border-secondary/10"
-  >
+  <div class="w-full h-[800px] relative overflow-hidden flex items-center justify-center py-40">
     <div class="absolute inset-0 w-full h-full z-0">
       <img
         src="/church.jpg"
@@ -16,20 +14,17 @@
       <div class="absolute inset-0 bg-black/60"></div>
     </div>
     <UContainer
-      class="flex flex-col items-center justify-center flex-1 gap-6 h-full py-10 px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+      class="flex flex-row items-end justify-between flex-1 gap-8 h-full py-10 px-4 sm:px-6 lg:px-8 relative z-10"
+      style="align-items: flex-end;"
     >
-      <div class="relative flex flex-col items-center mb-2">
-        <H3 class="!text-5xl opacity-90 mb-1 text-secondary">Our Vision</H3>
+      <div class="flex flex-col justify-start mb-2 h-full">
       </div>
-      <div class="w-full flex flex-col items-center justify-center">
-        <div class="text-2xl leading-relaxed text-bold lato max-w-2xl mb-8 text-center">
+      <div class="flex flex-col justify-end w-full max-w-2xl">
+        <H3 class="!text-5xl opacity-90 text-secondary text-left mb-6">Our Vision</H3>
+
+        <div class="text-2xl leading-relaxed text-bold lato mb-4 text-left">
           To Raise Up A Spirit Filled and Diverse Generation of Leaders to Belong, Believe, and Become Like Jesus.
         </div>
-        <UButton
-          size="xl"
-          color="primary"
-          class="font-bold cursor-pointer mt-4"
-        >Learn More</UButton>
       </div>
     </UContainer>
     <div

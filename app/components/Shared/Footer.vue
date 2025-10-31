@@ -7,8 +7,8 @@ const siteName = appConfig.siteName
 </script>
 
 <template>
-  <footer class="bg-stone-950/40 border-t border-stone-800 w-full">
-    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between gap-8">
+  <footer class="bg-stone-950 border-t border-stone-800 w-full">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between gap-8 ">
       <div class="flex-1 flex flex-row items-start gap-6">
         <img
           src="/nhm-logo.png"
@@ -45,7 +45,7 @@ const siteName = appConfig.siteName
           </div>
         </div>
       </div>
-      <div class="flex-1 grid grid-cols-2 gap-6 text-sm">
+      <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
         <div class="flex flex-col gap-2">
           <div class="font-extrabold text-gray-200 uppercase tracking-wide text-base">Explore</div>
           <NuxtLink
@@ -76,9 +76,22 @@ const siteName = appConfig.siteName
             class="text-gray-400 text-sm hover:text-gray-200 transition-colors"
           >Donate</NuxtLink>
         </div>
+        <div class="flex flex-col gap-2">
+          <div class="font-extrabold text-gray-200 uppercase tracking-wide text-base">Contact</div>
+          <div class="text-gray-400 text-sm">130-05 101 Ave<br />Richmond Hill, NY 11419</div>
+          <div class="text-gray-400 text-sm">M-F <span class="text-gray-200">8:00 - 5:00 Eastern Time</span></div>
+          <a
+            class="text-gray-400 text-sm hover:text-gray-200"
+            href="mailto:nhm1@newhavenministries.org"
+          >nhm1@newhavenministries.org</a>
+          <a
+            class="text-gray-400 text-sm hover:text-gray-200"
+            href="tel:+17188501300"
+          >(718) 850-1300</a>
+        </div>
       </div>
     </div>
-    <div class="text-center text-xs text-gray-500 py-4 border-t border-stone-800 bg-yellow-950/50">&copy; {{ new
+    <div class="text-center text-xs text-gray-500 py-4 border-t border-stone-800 bg-stone-900/50">&copy; {{ new
       Date().getFullYear() }} {{ siteName }}. All rights reserved.</div>
   </footer>
 </template>
