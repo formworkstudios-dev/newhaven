@@ -38,10 +38,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div
-    class="relative overflow-hidden h-[800px]"
-    style="border-bottom: 6px solid; border-image: linear-gradient(to right, var(--color-primary), #1e293b) 1;"
-  >
+  <div class="relative overflow-hidden h-[800px] border-b-0">
+    <div class="absolute left-0 bottom-0 w-full h-[6px] z-30 animate-gradient-scroll">
+      <div class="w-full h-full gradient-border"></div>
+    </div>
     <div
       class="pointer-events-none absolute left-0 top-0 w-full h-[200px] z-20"
       style="background: linear-gradient(to bottom, #0c0a09 0%, transparent 100%);"
@@ -136,5 +136,28 @@ onUnmounted(() => {
 .fade-slide-leave-from {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes gradient-scroll {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-border {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), #1e293b, var(--color-brand-400), var(--color-brand-700));
+  background-size: 200% 100%;
+  animation: gradient-scroll 16s linear infinite alternate;
+  border-radius: 3px;
+}
+
+.animate-gradient-scroll {
+  pointer-events: none;
 }
 </style>

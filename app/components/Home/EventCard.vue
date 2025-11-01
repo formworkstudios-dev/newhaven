@@ -51,15 +51,13 @@ defineProps<Props>();
     />
     <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
     <div class="relative z-20 h-full group">
-      <transition name="fade-slide-up">
-        <div
-          v-if="description"
-          class="absolute top-0 left-0 w-full h-full bg-black/70 text-white p-4 text-sm flex items-start justify-start opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-300 ease-in-out"
-          style="z-index: 30;"
-        >
-          <span class="align-top text-xl">{{ description }}</span>
-        </div>
-      </transition>
+      <div
+        v-if="description"
+        class="absolute top-0 left-0 w-full h-full bg-black/70 text-white p-4 text-sm flex items-start justify-start opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-300 ease-in-out"
+        style="z-index: 30;"
+      >
+        <span class="align-top text-xl">{{ description }}</span>
+      </div>
       <div class="absolute bottom-0 left-0 w-full z-40 p-4 flex flex-row justify-between items-center">
         <h3 class="text-xl font-bold">{{ name }}</h3>
         <div class="flex flex-col items-end text-xs opacity-80 ml-auto text-right">
@@ -71,21 +69,4 @@ defineProps<Props>();
   </div>
 </template>
 
-<style scoped>
-.fade-slide-up-enter-active,
-.fade-slide-up-leave-active {
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-.fade-slide-up-enter-from,
-.fade-slide-up-leave-to {
-  opacity: 0;
-  transform: translateY(24px);
-}
-
-.fade-slide-up-enter-to,
-.fade-slide-up-leave-from {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
+<style scoped></style>

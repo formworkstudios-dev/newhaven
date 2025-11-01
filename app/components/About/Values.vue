@@ -19,19 +19,27 @@ const values = [
 </script>
 
 <template>
-  <div class="w-full flex flex-col items-center gap-8 py-12">
-    <h2
-      v-if="values.length"
-      class="text-4xl font-bold text-secondary mb-8"
-    >OUR VALUES</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
-      <ValueCard
-        v-for="(value, idx) in values"
-        :key="value.heading"
-        :heading="value.heading"
-        :description="value.description"
-      />
+  <div class="pt-40">
+    <div class="w-full flex flex-col items-center gap-10">
+      <h2
+        v-if="values.length"
+        class="text-4xl font-extrabold text-secondary mb-10 tracking-tight"
+      >OUR VALUES</h2>
+      <div class="w-full max-w-2xl mx-auto flex flex-col items-center">
+        <div class="flex flex-col w-full items-center gap-6">
+          <div
+            v-for="(value, idx) in values"
+            :key="value.heading"
+            class="flex flex-col gap-1 py-3"
+          >
+            <h4 class="!text-xl font-bold text-secondary text-center">{{ value.heading }}</h4>
+            <p class="!text-lg text-gray-300 leading-relaxed">{{ value.description }}</p>
+          </div>
+        </div>
+      </div>
+
     </div>
+    <HomeRound class="-mt-20" />
   </div>
 </template>
 

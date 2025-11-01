@@ -5,75 +5,76 @@
 
 <template>
   <section
-    class="w-full h-screen bg-stone-950/80 border-t border-secondary/20 flex flex-col justify-between items-center overflow-hidden"
+    class="w-full flex flex-col justify-center items-center py-20 bg-stone-950/80 border-t border-secondary/20 h-screen relative overflow-hidden"
   >
-    <div class="flex-1 w-full flex flex-col justify-center items-center">
-      <div class="max-w-3xl mx-auto px-6 flex flex-col items-center text-center gap-8">
+    <img
+      src="/church.jpg"
+      alt="Church Background"
+      class="absolute inset-0 w-full h-full object-cover z-0 w-full"
+    />
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <div
+      class="max-w-4xl w-full bg-stone-900/90 border border-secondary/20  flex flex-col md:flex-row items-center p-8 gap-8 relative z-20"
+    >
+      <div class="flex-shrink-0 flex justify-center items-center w-[300px]">
         <img
           src="/nhm-logo.png"
           alt="New Haven Ministries Logo"
-          class="max-w-xs h-auto mx-auto mb-4"
+          class="max-w-[250px] w-full h-auto mx-auto"
         />
-        <h2 class="text-4xl font-bold text-secondary mb-4">Our Mission</h2>
-        <p class="text-lg text-gray-200 leading-relaxed">
-          WE STRIVE TO BE A CHURCH WITHOUT WALLS. JESUS CALLS FOR US TO GO OUTSIDE THE WALLS TO REACH THE LOST AND THE
-          BROKEN. IT IS THERE THAT LOST WILL BE FOUND. AT NEW HAVEN CHURCH WE MAKE AN EFFORT TO BE LIKE THE CHURCH FROM
-          THE BOOK OF ACTS, TO SEE OUR CITY CHANGE.
+      </div>
+      <div class="flex flex-col justify-center items-start w-full md:w-2/3 text-left">
+        <h2
+          class="text-4xl font-bold text-secondary mb-4"
+          id="mission"
+        >Our Mission</h2>
+        <p class="text-lg text-gray-200 leading-relaxed mb-4">
+          We strive to be a church without walls. Jesus calls for us to go outside the walls to reach the lost and the
+          broken. It is there that lost will be found. At New Haven Church we make an effort to be like the church from
+          the book of Acts, to see our city change.
         </p>
         <p class="text-lg text-gray-200 leading-relaxed">
-          TOGETHER WE ARE A COMMUNITY OF BELIEVERS. WHAT DOES THAT MEAN, THE WORD COMMUNITY? WE BELIEVE THAT TOGETHER IN
-          FELLOWSHIP WE GROW CLOSER TO GOD AND ONE ANOTHER. THE BIBLE SPEAKS ABOUT IRONING SHARPENING IRON. WE BELIEVE
-          THAT TOGETHER WE GROW STRONGER.
+          Together we are a community of believers. What does that mean, the word community? We believe that together in
+          fellowship we grow closer to God and one another. The Bible speaks about iron sharpening iron. We believe that
+          together we grow stronger.
         </p>
+        <div class="w-full flex flex-row gap-3 justify-start items-start mt-10 z-30 relative">
+          <UButton
+            href="#values"
+            variant="solid"
+            class="!px-3 !py-2"
+          >Values</UButton>
+          <UButton
+            href="#vision"
+            variant="solid"
+            class="!px-3 !py-2"
+          >Vision</UButton>
+          <UButton
+            href="#pastors"
+            variant="solid"
+            class="!px-3 !py-2"
+          >Our Pastors</UButton>
+          <UButton
+            href="#history"
+            variant="solid"
+            class="!px-3 !py-2"
+          >History</UButton>
+        </div>
+        <!-- Add anchor targets for navigation -->
+        <div id="values"></div>
+        <div id="vision"></div>
+        <div id="pastors"></div>
+        <div id="history"></div>
       </div>
     </div>
-    <!-- Scrolling prayer images row -->
-    <div class="w-full h-56 flex items-end overflow-hidden relative z-10">
-      <div class="scroll-row flex items-center h-
-OUR HISTORY
+    <!-- Fade to black stone-950 strip at bottom -->
+    <div
+      class="absolute left-0 right-0 bottom-0 h-32 pointer-events-none z-30"
+      style="background: linear-gradient(to top, #0c0a09 0%, transparent 100%);"
+    ></div>
+    <!-- Section navigation buttons -->
 
-FOUNDED IN 1998 BY PASTORS MATTHEW AND KATHY SINGH. WITH A SMALL GROUP OF FAMILY AND FRIENDS. GATHERED AROUND TOWN UNTIL 2000 WHEN WE PURCHASED OUR FIRST BUILDING. BY 2005, WE OUTGREW OUR FIRST BUILDING AND MOVED INTO OUR SECOND BUILDING. DUE TO EXPONENTIAL GROWTH, WE STARTED A BUILDING CONSTRUCTION PROJECT IN SUMMER OF 2017 AND FINALLY MOVED INTO OUR NEW BUILDING IN SPRING 2023.
-full animate-scroll-x">
-        <template v-for="repeat in 3">
-          <img
-            v-for="i in 7"
-            :key="repeat + '-' + i"
-            :src="`/prayer${i}.jpg`"
-            :alt="`Prayer ${i}`"
-            class="h-56 flex-1 w-full mx-2 rounded-xl shadow-lg object-cover"
-          />
-        </template>
-      </div>
-      <!-- Edge fade overlays to stone-950 -->
-      <div
-        class="absolute left-0 top-0 h-full w-24 pointer-events-none"
-        style="background: linear-gradient(to right, #0c0a09 90%, transparent 100%);"
-      ></div>
-      <div
-        class="absolute right-0 top-0 h-full w-24 pointer-events-none"
-        style="background: linear-gradient(to left, #0c0a09 90%, transparent 100%);"
-      ></div>
-    </div>
   </section>
 </template>
 
-<style scoped>
-.scroll-row {
-  min-width: 100vw;
-  display: flex;
-}
-
-.animate-scroll-x {
-  animation: scroll-x 36s linear infinite;
-}
-
-@keyframes scroll-x {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-</style>
+<style scoped></style>

@@ -1,9 +1,23 @@
 <template>
   <div class="relative flex flex-col items-center justify-center gap-12 h-screen w-full overflow-hidden">
-    <img src="/youth.jpeg" alt="Youth Background" class="absolute inset-0 w-full h-full object-cover z-0" />
+    <img
+      src="/youth.jpeg"
+      alt="Youth Background"
+      class="absolute inset-0 w-full h-full object-cover z-0"
+    />
     <div class="absolute inset-0 bg-black/50 z-10"></div>
     <div class="relative z-20 flex flex-col items-center justify-center w-full h-full">
-      <h1 class="text-4xl font-bold mb-8 text-center">Let’s help lead the next generation</h1>
+      <div class="text-center mb-16 gap-4 flex flex-col">
+        <h1
+          class="!text-6xl !font-bold leading-none flex items-center body mt-auto text-center mx-auto uppercase text-stone-100 opacity-80"
+        >
+          Next
+          <span
+            class="bg-gradient-to-r from-brand-400 via-brand-500 to-brand-700 bg-clip-text text-transparent opacity-80"
+          >Gen</span>
+        </h1>
+        <h2 class="lato text-lg font-semibold">Let's Help Lead the Next Generation Together</h2>
+      </div>
       <div class="flex flex-col md:flex-row gap-8 w-full justify-center items-center">
         <ClubCard
           img="https://placehold.co/400x200?text=World+Changers"

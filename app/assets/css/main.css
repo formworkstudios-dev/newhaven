@@ -1,3 +1,6 @@
+.animate-fade-in-up-fast {
+  animation: fade-in-up 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
 @theme static {
   /* Custom secondary color: #F4F9FC */
   --color-secondary-50: #fafdfe;
@@ -26,8 +29,53 @@
   --color-brand-900: #002933;
   --color-brand-950: #00141a;
 }
+
 @import "tailwindcss" theme(static);
 @import "@nuxt/ui";
+
+/* Intersection Observer Animations */
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 html,
 body {
@@ -43,8 +91,6 @@ body {
 :root {
   --ui-color-mode: dark;
 }
-
-/* You can place this inside a @layer base in Tailwind or in a global.css */
 
 h1,
 .h1 {
@@ -82,4 +128,18 @@ p,
   font-family: "Lato", sans-serif;
 }
 .hero-text {
+}
+
+/* NextGen page and Hero section: Use Lato for all headings and text */
+.nextgen,
+.nextgen h1,
+.nextgen h2,
+.nextgen h3,
+.nextgen h4,
+.nextgen p,
+.nextgen .hero-text,
+.lato {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 700;
+  letter-spacing: 0.1px;
 }

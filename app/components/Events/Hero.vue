@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
+  <div class="relative w-full h-[50vh] flex items-center justify-center overflow-hidden py-20">
     <img
       src="/unispere.jpeg"
       alt="Events Hero Background"
@@ -22,6 +22,11 @@
         <span class="font-bold italic">making a difference</span> in our community and beyond.
       </p>
     </div>
+    <!-- Fade to black stone-950 strip at bottom -->
+    <div
+      class="absolute left-0 right-0 bottom-0 h-32 pointer-events-none z-30"
+      style="background: linear-gradient(to top, #0c0a09 0%, transparent 100%);"
+    ></div>
   </div>
 </template>
 

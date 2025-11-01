@@ -4,15 +4,15 @@
 ></script>
 
 <template>
-  <UContainer>
+  <div>
 
     <AboutMission />
     <AboutValues />
     <AboutVision />
-    <AboutPastors />
-    <AboutHistory />
 
-  </UContainer>
+    <AboutHistory />
+    <AboutPastors />
+  </div>
 </template>
 
 <style scoped></style>

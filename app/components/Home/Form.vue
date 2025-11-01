@@ -108,7 +108,7 @@ function handleSubmit() {
             color="primary"
             size="xl"
             class="w-full font-bold rounded-none"
-          ><span class="text-center w-full">Plan My Visit</span></UButton>
+          ><span class="text-center w-full">Send My Message</span></UButton>
         </div>
         <div
           v-if="submitted"

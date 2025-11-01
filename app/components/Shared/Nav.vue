@@ -66,7 +66,7 @@ onUnmounted(() => {
           alt="Logo"
           class="h-8 w-8 object-contain"
         />
-        <span>{{ siteName }}</span>
+        <span class="!font-bold">{{ siteName }}</span>
       </NuxtLink>
       <button
         @click="toggleMobileMenu"
