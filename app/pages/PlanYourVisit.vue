@@ -2,8 +2,6 @@
   setup
   lang="ts"
 ></script>
-import PlanHero from '~/components/Plan/Hero.vue'
-import PlanSteps from '~/components/Plan/Steps.vue'
 
 <template>
   <PlanHero />

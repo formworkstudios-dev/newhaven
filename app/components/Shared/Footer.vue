@@ -8,22 +8,6 @@ const siteName = appConfig.siteName
 
 <template>
   <footer class="bg-stone-950 border-t border-stone-800 w-full footer-noise">
-</style>
-<style>
-.footer-noise {
-  position: relative;
-  overflow: hidden;
-}
-.footer-noise::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: url('https://www.transparenttextures.com/patterns/noise.png');
-  opacity: 0.18;
-  z-index: 1;
-}
-</style>
     <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between gap-8 ">
       <div class="flex-1 flex flex-row items-start gap-6">
         <img
@@ -44,7 +28,7 @@ const siteName = appConfig.siteName
             >
               <UIcon
                 name="i-mdi-facebook"
-                class="!text-4xl"
+                class="!text-2xl"
               />
             </a>
             <a
@@ -55,7 +39,7 @@ const siteName = appConfig.siteName
             >
               <UIcon
                 name="i-mdi-instagram"
-                class="!text-4xl"
+                class="!text-2xl"
               />
             </a>
             <a
@@ -66,7 +50,7 @@ const siteName = appConfig.siteName
             >
               <UIcon
                 name="i-mdi-youtube"
-                class="!text-4xl"
+                class="!text-2xl"
               />
             </a>
           </div>
@@ -123,4 +107,19 @@ const siteName = appConfig.siteName
   </footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+.footer-noise {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('https://www.transparenttextures.com/patterns/noise.png');
+  opacity: 0.18;
+  z-index: 1;
+}
+</style>

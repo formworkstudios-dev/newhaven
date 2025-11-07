@@ -10,5 +10,6 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/ui",
     "@nuxtjs/seo",
+    "nuxt-swiper",
   ],
 });

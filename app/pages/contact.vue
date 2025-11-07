@@ -1,11 +1,13 @@
-<script setup lang="ts"></script>
+<script
+  setup
+  lang="ts"
+></script>
 
 <template>
-  <UContainer>
+  <div>
+    <ContactForm />
 
-    Page: contact
-
-  </UContainer>
+  </div>
 </template>
 
 <style scoped></style>

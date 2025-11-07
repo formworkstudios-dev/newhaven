@@ -38,7 +38,7 @@ function handleSubmit() {
 
 <template>
   <div class="max-w-xl mx-auto rounded-none">
-    <UCard class="p-8 bg-secondary/30 !border-none rounded-none ring-0">
+    <UCard class="p-8 bg-secondary/10 !border-none rounded-none ring-0">
       <UForm
         @submit.prevent="handleSubmit"
         :state="form"

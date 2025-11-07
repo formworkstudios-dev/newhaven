@@ -5,12 +5,28 @@
 
 <template>
   <UContainer class="flex flex-col items-start space-y-4 py-40">
-    <div class="w-full text-center mb-32">
-      <H3 class="!text-5xl opacity-90 mb-1 text-center text-secondary pb-4">Plan Your Visit</H3>
-      <div class="pb-4 !text-lg">No Awkward First Visit</div>
+    <div class="w-full text-center mb-32 relative">
+      <H3 class="!text-5xl opacity-90 mb-1 text-center text-secondary pb-4 relative z-10">Plan Your Visit</H3>
+      <!-- Blue blob SVG background -->
+      <svg
+        class="absolute -top-16 left-1/2 -translate-x-1/2 w-[32rem] h-[18rem] opacity-40 blur-3xl z-0 pointer-events-none"
+        viewBox="0 0 600 400"
+        fill="none"
+        aria-hidden="true"
+      >
+        <ellipse
+          cx="300"
+          cy="200"
+          rx="220"
+          ry="110"
+          fill="#0096bb"
+          fill-opacity="0.5"
+        />
+      </svg>
+      <div class="pb-4 !text-lg relative z-10">No Awkward First Visit</div>
       <UButton
         href="/plan-your-visit"
-        class="mt-4 !text-lg"
+        class="mt-4 !text-lg relative z-10"
         variant="solid"
         trailing-icon="i-mdi-chevron-double-right"
       >Plan Your Visit Today</UButton>
