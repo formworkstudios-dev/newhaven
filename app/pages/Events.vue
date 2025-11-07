@@ -39,6 +39,7 @@ const events = [
           />
         </div>
       </div>
+      <EventsUpcoming />
     </UContainer>
   </div>
 </template>
