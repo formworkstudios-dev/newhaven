@@ -6,10 +6,14 @@
 <template>
   <div>
     <AboutMission />
-    <AboutValues />
+    <!-- <AboutValues />
+    <div>
+      <h1>TESTING TURLTES</h1>>s
+    </div>
     <AboutVision />
-    <AboutHistory />
-    <AboutPastors />
+    <AboutHistory /> -->
+
+    <HomeOurPastors />
   </div>
 </template>
 

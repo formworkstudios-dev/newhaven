@@ -6,7 +6,7 @@ const history = useAppConfig().history;
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center py-20 px-8 gap-12 text-left">
+  <div class="flex flex-col items-center justify-center py-20 px-8 gap-12 text-left relative z-50 bg-stone-950">
     <img
       :src="history.image"
       alt="Church History"

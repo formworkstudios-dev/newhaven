@@ -37,10 +37,10 @@
       </div>
       <div class="flex-1 flex flex-col justify-center items-start">
         <h2 class="text-4xl font-bold text-secondary mb-2">Our Pastors</h2>
-        <h3 class="text-2xl font-semibold text-gray-100 mb-4">Matthew and Kathy Singh</h3>
+        <h3 class="text-2xl font-semibold text-gray-100 mb-4 !font-sans">Matthew & Kathy Singh</h3>
         <p class="!text-lg text-gray-300 max-w-xl">
           Pastors Matthew and Kathy Singh have been in ministry for over 30 years and are the lead and founding pastors
-          of New Haven Ministries
+          of New Haven Ministries.
         </p>
       </div>
     </div>

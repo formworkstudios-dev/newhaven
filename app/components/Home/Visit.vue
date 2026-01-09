@@ -24,7 +24,7 @@
           />
         </svg>
         <H3 class="text-4xl md:!text-5xl opacity-90 mb-1 text-secondary relative z-10">Plan Your Visit</H3>
-        <div class="!text-lg text-gray-300 mb-2 relative z-10">No Awkward First Visit!</div>
+        <div class="!text-lg text-gray-300 mb-2 relative z-10 font-semibold">No Awkward First Visit!</div>
         <div class="mb-2 text-gray-200 max-w-md text-md">
           We warmly welcome you to our ministry! Join us to visit, learn, and grow together in faith and community.
         </div>
@@ -34,7 +34,7 @@
             name="i-mdi-map-marker"
             class="text-primary !text-2xl"
           />
-          <span class="text-gray-200 text-md">130-05 101st Ave, South Richmond Hill, NY 11419</span>
+          <span class="text-gray-200 text-md">130-05 101st Ave, S. Richmond Hill, NY</span>
         </div>
         <div class="flex items-center gap-3 mb-2">
           <UIcon

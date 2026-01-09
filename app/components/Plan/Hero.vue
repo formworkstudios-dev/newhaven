@@ -1,23 +1,29 @@
+<template>
+  <div class="relative w-full h-[50vh] flex items-center justify-center overflow-hidden py-20">
+    <img
+      src="/unispere.jpeg"
+      alt="Plan Your Visit Hero Background"
+      class="absolute inset-0 w-full h-full object-cover z-0"
+    />
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <div class="relative z-20 flex flex-col items-center justify-center w-full h-full">
+      <h2 class="text-5xl font-bold text-white mb-4 drop-shadow-lg pt-10 pb-4">Visit New Haven Ministries</h2>
+    </div>
+    <!-- Fade to black stone-950 strip at bottom -->
+    <div
+      class="absolute left-0 right-0 bottom-0 h-32 pointer-events-none z-30"
+      style="background: linear-gradient(to top, #0c0a09 0%, transparent 100%);"
+    ></div>
+  </div>
+</template>
+
 <script
   setup
   lang="ts"
-></script>
+>
+// No script needed for static hero
+</script>
 
-<template>
-  <section
-    class="w-full flex items-center justify-center bg-primary/70 text-white"
-    style="height:600px;"
-  >
-    <div class="max-w-2xl mx-auto px-4 flex flex-col items-center text-center">
-      <h1 class="text-5xl font-extrabold mb-6">No Awkward First Visit</h1>
-      <p class="text-lg mb-6">Here’s what happens when you plan your first visit…</p>
-      <p class="text-base mb-8">
-        Here’s the deal… We do things a little differently around here. We know it can be a little weird or even awkward
-        visiting a church for the first time. That’s why we created <span class="font-bold underline">Plan Your
-          Visit</span>.
-      </p>
-    </div>
-  </section>
-</template>
-
-<style scoped></style>
+<style scoped>
+/* Add any custom styles if needed */
+</style>

@@ -10,7 +10,7 @@
     <img
       src="/church.jpg"
       alt="Church Background"
-      class="absolute inset-0 w-full h-full object-cover z-0 w-full"
+      class="fixed inset-0 w-full h-full object-cover z-0 w-full"
     />
     <div class="absolute inset-0 bg-black/60 z-10"></div>
     <div

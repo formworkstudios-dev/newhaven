@@ -49,7 +49,7 @@ function handleSubmit() {
           name="name"
           :error="errors.name?.[0]"
           class="w-full"
-          label-class="font-bold"
+          label-class="!font-semibold !text-white"
         >
           <UInput
             v-model="form.name"
@@ -63,7 +63,7 @@ function handleSubmit() {
           name="email"
           :error="errors.email?.[0]"
           class="w-full"
-          label-class="font-bold"
+          label-class="!font-semibold !text-white"
         >
           <UInput
             v-model="form.email"
@@ -78,7 +78,7 @@ function handleSubmit() {
           name="date"
           :error="errors.date?.[0]"
           class="w-full"
-          label-class="font-bold"
+          label-class="!font-semibold !text-white"
         >
           <UInput
             v-model="form.date"
@@ -93,13 +93,14 @@ function handleSubmit() {
           name="message"
           :error="errors.message?.[0]"
           class="w-full"
-          label-class="font-bold"
+          label-class="!font-semibold !text-white"
         >
           <UTextarea
             v-model="form.message"
             placeholder="Tell us about your visit plans..."
-            class="w-full min-h-[120px] !rounded-none"
+            class="w-full !rounded-none"
             size="xl"
+            :rows="5"
           />
         </UFormField>
         <div class="pt-2 text-center">
@@ -107,7 +108,7 @@ function handleSubmit() {
             type="submit"
             color="primary"
             size="xl"
-            class="w-full font-bold rounded-none"
+            class="w-full font-bold rounded-none cursor-pointer"
           ><span class="text-center w-full">Send My Message</span></UButton>
         </div>
         <div
@@ -123,5 +124,30 @@ function handleSubmit() {
 :deep(input),
 :deep(textarea) {
   border-radius: 0 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  color: white !important;
+}
+
+:deep(input[type="date"]) {
+  color: #9ca3af !important;
+}
+
+:deep(input[type="date"]:focus),
+:deep(input[type="date"]:valid) {
+  color: white !important;
+}
+
+:deep(input::placeholder),
+:deep(textarea::placeholder),
+:deep(input::-webkit-input-placeholder),
+:deep(input::-moz-placeholder) {
+  color: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1 !important;
+}
+
+:deep(label) {
+  color: white !important;
+  font-weight: 600 !important;
 }
 </style>

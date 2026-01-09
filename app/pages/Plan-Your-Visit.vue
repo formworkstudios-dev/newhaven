@@ -5,7 +5,9 @@
 
 <template>
   <PlanHero />
+  <PlanInfo />
   <div class="w-full max-w-4xl mx-auto py-16 px-4 flex flex-col items-center text-center">
+    <h2 class="text-center text-3xl font-bold text-secondary mb-8">Plan Your Visit</h2>
     <PlanSteps />
     <p class="!text-base text-gray-300 mb-8">
       We want to make sure your first visit is as smooth and easy as possible. We would love to take time to actually
