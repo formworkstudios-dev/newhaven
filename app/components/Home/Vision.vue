@@ -14,15 +14,14 @@
       <div class="absolute inset-0 bg-black/60"></div>
     </div>
     <UContainer
-      class="flex flex-row items-end justify-between flex-1 gap-8 h-full py-10 px-4 sm:px-6 lg:px-8 relative z-10"
-      style="align-items: flex-end;"
+      class="flex flex-col md:flex-row items-center md:items-end justify-center md:justify-between flex-1 gap-8 h-full py-10 px-4 sm:px-6 lg:px-8 relative z-10"
     >
-      <div class="flex flex-col justify-start mb-2 h-full">
+      <div class="flex flex-col justify-start mb-2 h-full hidden md:flex">
       </div>
-      <div class="flex flex-col justify-end w-full max-w-2xl">
-        <H3 class="!text-5xl opacity-90 text-secondary text-left mb-6">Our Vision</H3>
+      <div class="flex flex-col justify-end md:justify-end justify-center w-full max-w-2xl">
+        <H3 class="!text-5xl opacity-90 text-secondary text-center md:text-left mb-6">Our Vision</H3>
 
-        <div class="text-2xl leading-relaxed text-bold lato mb-4 text-left">
+        <div class="text-2xl leading-relaxed text-bold lato mb-4 text-center md:text-left">
           To Raise Up A Spirit Filled and Diverse Generation of Leaders to Belong, Believe, and Become Like Jesus.
         </div>
       </div>

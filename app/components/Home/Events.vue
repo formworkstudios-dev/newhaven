@@ -33,7 +33,9 @@ const events = [
     <div class="flex flex-col md:flex-row gap-12 items-stretch overflow-visible">
       <!-- Left: Heading and Description -->
       <div class="flex-1 flex flex-col justify-start md:items-start items-center gap-4 relative overflow-visible">
-        <h2 class="text-left w-full text-4xl animate-fade-in-up">Find Your Home <span class="text-secondary">With
+        <h2 class="text-left w-full text-4xl animate-fade-in-up">Find Your Home<br class="md:hidden"> <span
+            class="text-secondary"
+          >With
             Us</span>.</h2>
         <div class="text-left max-w-xl text-xl animate-fade-in-up">
           New Haven Ministries is more than a church—we're a family united by faith, committed to growing together and
@@ -55,7 +57,7 @@ const events = [
           />
         </svg>
         <div
-          class="bg-primary/10 px-2 border-dotted flex flex-row items-end gap-1 self-center md:self-start text-primary hover:text-secondary transition-colors cursor-pointer z-10 font-mono mt-4 hover:bg-primary/20 hover:shadow-md hover:-translate-y-0.5 transform hover:border-secondary/50 border border-transparent animate-fade-in-up"
+          class="bg-primary/10 px-2 border-dotted mr-auto flex flex-row items-end gap-1 self-center md:self-start text-primary hover:text-secondary transition-colors cursor-pointer z-10 font-mono mt-4 hover:bg-primary/20 hover:shadow-md hover:-translate-y-0.5 transform hover:border-secondary/50 border border-transparent animate-fade-in-up"
         >
           <span>Get Involved</span>
           <UIcon
@@ -66,6 +68,15 @@ const events = [
       </div>
       <!-- Right: Event Cards stacked vertically -->
       <div class="flex-1 flex flex-col gap-6 w-full max-w-md mx-auto">
+        <div
+          class="w-full bg-gradient-to-r from-primary/20 to-primary/10 border border-gray-800 px-6 py-4 flex items-center justify-between"
+        >
+          <h3 class="text-2xl md:text-3xl font-bold text-white">What's Happening?</h3>
+          <UIcon
+            name="i-mdi-calendar-month"
+            class="text-3xl text-primary"
+          />
+        </div>
 
         <EventCard
           v-for="event in events"

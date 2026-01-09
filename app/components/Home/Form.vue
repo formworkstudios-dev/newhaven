@@ -38,11 +38,11 @@ function handleSubmit() {
 
 <template>
   <div class="max-w-xl mx-auto rounded-none">
-    <UCard class="p-8 bg-secondary/10 !border-none rounded-none ring-0">
+    <UCard class="p-3 sm:p-6 md:p-8 bg-secondary/10 !border-none rounded-none ring-0">
       <UForm
         @submit.prevent="handleSubmit"
         :state="form"
-        class="space-y-6 !border-none ring-0"
+        class="space-y-3 sm:space-y-6 !border-none ring-0"
       >
         <UFormField
           label="Name"
@@ -54,7 +54,7 @@ function handleSubmit() {
           <UInput
             v-model="form.name"
             placeholder="Your name"
-            class="w-full"
+            class="w-full !rounded-none"
             size="xl"
           />
         </UFormField>
@@ -69,7 +69,7 @@ function handleSubmit() {
             v-model="form.email"
             placeholder="Your email"
             type="email"
-            class="w-full"
+            class="w-full !rounded-none"
             size="xl"
           />
         </UFormField>
@@ -84,7 +84,7 @@ function handleSubmit() {
             v-model="form.date"
             placeholder="YYYY-MM-DD"
             type="date"
-            class="w-full"
+            class="w-full !rounded-none"
             size="xl"
           />
         </UFormField>
@@ -98,7 +98,7 @@ function handleSubmit() {
           <UTextarea
             v-model="form.message"
             placeholder="Tell us about your visit plans..."
-            class="w-full min-h-[120px]"
+            class="w-full min-h-[120px] !rounded-none"
             size="xl"
           />
         </UFormField>
@@ -119,4 +119,9 @@ function handleSubmit() {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+:deep(input),
+:deep(textarea) {
+  border-radius: 0 !important;
+}
+</style>

@@ -2,7 +2,7 @@ export default defineAppConfig({
   siteName: "New Haven Ministries",
   visionTitle: "Vision",
   visionDescription:
-    "To Raise Up A Spirit Filled And Diverse Generation Of Leaders To Help People Belong, Believe and Become More Like Jesus",
+    "To Raise Up A Spirit Filled And Diverse Generation Of Leaders To Help People Belong, Believe and Become More Like Jesus.",
   history: {
     title: "Our History",
     description:

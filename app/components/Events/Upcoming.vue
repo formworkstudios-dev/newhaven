@@ -33,11 +33,12 @@ const upcomingEvents: Event[] = [
 <template>
   <section class="mt-20">
     <h3 class="text-center text-2xl font-bold text-secondary mb-6">Upcoming Events</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+    <div class="flex flex-col md:flex-row gap-6 max-w-2xl mx-auto justify-center">
       <EventCard
         v-for="ev in upcomingEvents"
         :key="ev.name"
         v-bind="ev"
+        class="w-[400px] max-w-full flex-shrink-0"
       />
     </div>
   </section>

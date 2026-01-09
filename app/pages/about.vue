@@ -5,11 +5,9 @@
 
 <template>
   <div>
-
     <AboutMission />
     <AboutValues />
     <AboutVision />
-
     <AboutHistory />
     <AboutPastors />
   </div>

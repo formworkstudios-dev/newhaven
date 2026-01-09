@@ -38,7 +38,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="relative overflow-hidden h-[800px] border-b-0">
+  <div class="relative overflow-hidden h-[600px] md:h-[800px] border-b-0">
     <div class="absolute left-0 bottom-0 w-full h-[6px] z-30 animate-gradient-scroll">
       <div class="w-full h-full gradient-border"></div>
     </div>
@@ -54,7 +54,7 @@ onUnmounted(() => {
         :style="{ transform: `scale(${bgScale})` }"
       />
     </div>
-    <UContainer class="flex flex-col items-start space-y-4 relative z-10 h-full py-24">
+    <UContainer class="flex flex-col items-start space-y-4 relative z-10 h-full py-16 md:py-24">
       <div
         id="nextgen-section"
         class="w-full flex flex-row justify-between items-end relative gap-8 h-full"
@@ -62,18 +62,19 @@ onUnmounted(() => {
         @mouseleave="handleLeave"
       >
         <div class="relative flex-1 basis-1/2 flex flex-col justify-end items-start h-full self-end">
-          <div
-            class="flex flex-row gap-4 items-center font-bold group transition-all cursor-pointer -mb-2"
+          <NuxtLink
+            to="/nextgen"
+            class="flex flex-row gap-2 md:gap-4 items-center font-bold group transition-all cursor-pointer -mb-2"
             @click="handleClick"
           >
-            <h3 class="!text-6xl !font-bold leading-none flex items-center body mb-2 mt-auto">
+            <h3 class="!text-5xl md:!text-6xl !font-bold leading-none flex items-center body mb-2 mt-auto">
               Next
               <span
                 class="bg-gradient-to-r from-brand-400 via-brand-500 to-brand-700 bg-clip-text text-transparent">Gen</span>
             </h3>
             <span class="flex items-center h-full cursor-pointer">
               <svg
-                class="h-[2.75rem] w-[2.75rem] md:h-[3.5rem] md:w-[3.5rem] group-hover:ml-2 transition-all ease-in-out duration-300"
+                class="h-[2.25rem] w-[2.25rem] md:h-[3.5rem] md:w-[3.5rem] group-hover:ml-2 transition-all ease-in-out duration-300"
                 viewBox="0 0 64 64"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +91,7 @@ onUnmounted(() => {
                 </g>
               </svg>
             </span>
-          </div>
+          </NuxtLink>
         </div>
         <transition name="fade-slide">
           <div
@@ -104,7 +105,8 @@ onUnmounted(() => {
               Our Mission is to empower the next generation to lead our planet with faith and purpose. They are our
               future.
             </div>
-            <div
+            <NuxtLink
+              to="/nextgen"
               class="bg-primary/10 px-2 border-dotted flex flex-row items-end gap-1 self-center md:self-start text-primary hover:text-secondary transition-colors cursor-pointer z-10 font-mono mt-4 hover:bg-primary/20 hover:shadow-md hover:-translate-y-0.5 transform hover:border-secondary/50 border border-transparent"
             >
               <span>Become Part of NextGen</span>
@@ -112,7 +114,7 @@ onUnmounted(() => {
                 name="i-mdi-arrow-top-right"
                 class="text-lg mb-1.5"
               />
-            </div>
+            </NuxtLink>
           </div>
         </transition>
       </div>
