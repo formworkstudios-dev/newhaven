@@ -30,7 +30,7 @@
           />
         </svg>
         <img
-          src="/new-haven-ministries-richmondhill-mattkat.jpg"
+          src="/our-pastors.jpeg"
           alt="Pastors Matthew and Kathy Singh"
           class="relative w-full h-[340px] object-cover border border-secondary/30 z-10"
         />

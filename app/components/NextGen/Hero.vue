@@ -20,7 +20,7 @@
       </div>
       <div class="flex flex-col md:flex-row gap-8 w-full justify-center items-center">
         <ClubCard
-          img="https://placehold.co/400x200?text=World+Changers"
+          img="/next-gen.jpeg"
           header="NHM World Changers"
           subheading="Kids Club (Ages 4-12)"
           description="Our kids club embraces children age 4-12 with a biblical program that will help them learn about their faith. Our goal is to nurture a personal growth towards their spiritual maturity, all while doing it in a fun and creative environment amongst their peers."
@@ -32,7 +32,7 @@
           description="Chosen Youth is a Ministry geared towards our teens ages 13-18. A safe space for our next generation to learn about God while building their faith. Our nights are designed around fun and relationships. We also have Tech, Dance, Band, Art & Media departments."
         />
         <ClubCard
-          img="https://placehold.co/400x200?text=Young+Adults"
+          img="/young-adults.jpeg"
           header="Young Adults"
           subheading="CYA (Ages 18-25)"
           description="CYA is a Department within the Youth ministry that is focused on Young adults ages 18-25 where we help to build their faith in a more mature setting. Focused Bible studies and Deeper discussions on the word of God while maintaining an atmosphere of fun."

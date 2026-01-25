@@ -119,16 +119,18 @@ onUnmounted(() => {
           class="nav-link"
           exact-active-class="nav-link-active"
         >NextGen</NuxtLink>
+        
         <NuxtLink
           to="/contact"
           class="nav-link"
           exact-active-class="nav-link-active"
         >Contact</NuxtLink>
-        <NuxtLink
-          to="/plan-your-visit"
+        <a
+          href="https://app.textinchurch.com/connect-cards/AxP3gJSuf5DT7GiJCkY5"
+          target="_blank"
+          rel="noopener noreferrer"
           class="nav-link whitespace-nowrap"
-          exact-active-class="nav-link-active"
-        >Plan Your Visit</NuxtLink>
+        >Plan Your Visit</a>
         <NuxtLink to="/donate">
           <UButton class="font-bold text-xs lg:text-sm">GIVE TODAY</UButton>
         </NuxtLink>
@@ -182,16 +184,19 @@ onUnmounted(() => {
             @click="closeMobileMenu"
             class="hover:text-primary transition-colors"
           >NextGen</NuxtLink>
+          
           <NuxtLink
             to="/contact"
             @click="closeMobileMenu"
             class="hover:text-primary transition-colors"
           >Contact</NuxtLink>
-          <NuxtLink
-            to="/plan-your-visit"
+          <a
+            href="https://app.textinchurch.com/connect-cards/AxP3gJSuf5DT7GiJCkY5"
+            target="_blank"
+            rel="noopener noreferrer"
             @click="closeMobileMenu"
             class="hover:text-primary transition-colors"
-          >Plan Your Visit</NuxtLink>
+          >Plan Your Visit</a>
           <NuxtLink
             to="/donate"
             @click="closeMobileMenu"

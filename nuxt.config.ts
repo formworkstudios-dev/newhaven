@@ -12,4 +12,8 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "nuxt-swiper",
   ],
+
+  routeRules: {
+    '/plan-your-visit': { redirect: { to: 'https://app.textinchurch.com/connect-cards/AxP3gJSuf5DT7GiJCkY5', statusCode: 301 } },
+  },
 });

@@ -1,8 +1,12 @@
-<script setup lang="ts"></script>
+<script
+  setup
+  lang="ts"
+></script>
 
 <template>
   <div>
-    Page: Donate
+    <GiveV1 />
+    <GiveV2 />
   </div>
 </template>
 
