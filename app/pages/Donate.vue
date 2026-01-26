@@ -5,7 +5,8 @@
 
 <template>
   <div>
-    <GiveV1 />
+    <GiveHero />
+    <!-- <GiveV1 /> -->
     <GiveV2 />
   </div>
 </template>

@@ -14,17 +14,17 @@
       <div class="absolute inset-0 bg-black/60"></div>
     </div>
     <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-20 px-6 relative z-10">
-      <div class="relative w-full md:w-1/2 h-[340px] flex items-center justify-center">
+      <div class="relative w-full md:w-1/2 flex items-center justify-center">
         <svg
-          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[320px] blur-3xl opacity-60 z-0"
-          viewBox="0 0 420 320"
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[520px] blur-3xl opacity-60 z-0"
+          viewBox="0 0 420 520"
           fill="none"
         >
           <ellipse
             cx="210"
-            cy="160"
+            cy="260"
             rx="180"
-            ry="120"
+            ry="220"
             fill="#0096bb"
             fill-opacity="0.7"
           />
@@ -32,7 +32,7 @@
         <img
           src="/our-pastors.jpeg"
           alt="Pastors Matthew and Kathy Singh"
-          class="relative w-full h-[340px] object-cover border border-secondary/30 z-10"
+          class="relative w-full max-w-sm aspect-[3/4] object-cover border border-secondary/30 z-10"
         />
       </div>
       <div class="flex-1 flex flex-col justify-center items-start">

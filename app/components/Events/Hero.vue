@@ -7,7 +7,8 @@
     />
     <div class="absolute inset-0 bg-black/60 z-10"></div>
     <div class="relative z-20 flex flex-col items-center justify-center w-full h-full">
-      <h2 class="text-5xl font-bold text-white mb-4 drop-shadow-lg pt-10 pb-4">Join us for upcoming events.</h2>
+      <h2 class="text-5xl font-bold  mb-4 drop-shadow-lg pt-10 pb-4 text-secondary">Join us for upcoming
+        events</h2>
     </div>
     <!-- Fade to black stone-950 strip at bottom -->
     <div

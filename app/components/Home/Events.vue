@@ -16,7 +16,7 @@ const events = [
     description: "Join us for worship and teaching.",
     time: "Sundays | 10:00 AM",
     location: "Main Sanctuary",
-    image: "/newhaven-group.jpg",
+    image: "/sunday-service.jpeg",
   },
   {
     name: "Bible Study",
@@ -56,15 +56,16 @@ const events = [
             fill-opacity="0.5"
           />
         </svg>
-        <div
+        <NuxtLink
+          to="/Events"
           class="bg-primary/10 px-2 border-dotted mr-auto flex flex-row items-end gap-1 self-center md:self-start text-primary hover:text-secondary transition-colors cursor-pointer z-10 font-mono mt-4 hover:bg-primary/20 hover:shadow-md hover:-translate-y-0.5 transform hover:border-secondary/50 border border-transparent animate-fade-in-up"
         >
-          <span>Get Involved</span>
+          <span>See All Events</span>
           <UIcon
             name="i-mdi-arrow-top-right"
             class="text-lg mb-1.5"
           />
-        </div>
+        </NuxtLink>
       </div>
       <!-- Right: Event Cards stacked vertically -->
       <div class="flex-1 flex flex-col gap-6 w-full max-w-md mx-auto">

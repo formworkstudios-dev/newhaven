@@ -6,8 +6,9 @@
 <template>
   <div>
     <AboutMission />
+    <AboutVision2 />
     <AboutValues2 />
-    <AboutValues2 />
+
     <AboutHistory2 />
     <Gallery />
     <!--
@@ -19,7 +20,9 @@
     <AboutVision />
     <AboutHistory /> -->
 
-    <HomeOurPastors />
+    <div id="pastors">
+      <HomeOurPastors />
+    </div>
 
   </div>
 </template>

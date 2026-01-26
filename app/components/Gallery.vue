@@ -1,4 +1,7 @@
-<script setup lang="ts">
+<script
+  setup
+  lang="ts"
+>
 const galleryImages = [
   'gallery/church-gathering-queens-ny.webp',
   'gallery/church-performance-queens.webp',
@@ -16,31 +19,56 @@ const galleryImages = [
 </script>
 
 <template>
-  <div class="bg-white py-24 sm:py-32">
+  <div class="bg-stone-950 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+      <div class="mx-auto max-w-2xl text-center w-full">
+        <h2 class="text-3xl font-bold mb-4 text-secondary !text-center">
           Our Gallery
         </h2>
-        <p class="mt-6 text-lg leading-8 text-gray-600">
+        <p class="!text-lg leading-relaxed text-center">
           A glimpse into our community, worship, and events.
         </p>
       </div>
-      <ul
-        role="list"
-        class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-      >
-        <li v-for="image in galleryImages" :key="image">
+      <div class="masonry-grid mt-20">
+        <div
+          v-for="image in galleryImages"
+          :key="image"
+          class="masonry-item"
+        >
           <NuxtImg
-            class="aspect-[3/2] w-full rounded-2xl object-cover"
+            class="w-full object-cover"
             :src="image"
             alt=""
             loading="lazy"
           />
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.masonry-grid {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  width: 100%;
+}
+</style>

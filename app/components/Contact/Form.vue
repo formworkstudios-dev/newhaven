@@ -79,7 +79,7 @@ function onError(e: FormErrorEvent) {
       <div class="absolute inset-0 flex items-center justify-center">
         <div class="text-center px-4">
           <h1
-            class="hero-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-100 tracking-tight !capitalize"
+            class="hero-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-secondary tracking-tight !capitalize"
           >Get in
             Touch</h1>
           <p class="text-stone-300 mt-2 !in !text-2xl">Reach out and we’ll get back to you soon</p>
@@ -93,42 +93,39 @@ function onError(e: FormErrorEvent) {
     </div>
 
     <UContainer class="pt-8 pb-16 max-w-3xl min-h-screen">
-      <div class="mb-8 text-center">
-        <div class="text-lg font-semibold text-stone-700">Call or Email Us Directly:</div>
-        <div class="mt-2">
-          <span class="inline-block mr-4">
-            <UIcon
-              name="i-mdi-phone"
-              class="mr-1 align-middle"
-              size="18"
-            />
-            <a
-              href="tel:17188501300"
-              class="text-primary font-medium hover:underline"
-            >(718) 850-1300</a>
-          </span>
-          <span class="inline-block">
-            <UIcon
-              name="i-mdi-email"
-              class="mr-1 align-middle"
-              size="18"
-            />
-            <a
-              href="mailto:nhm1@newhavenministries.org"
-              class="text-primary font-medium hover:underline"
-            >nhm1@newhavenministries.org</a>
-          </span>
-        </div>
-      </div>
       <UCard
-        class="mt-8 rounded-none bg-stone-800/80"
+        class="mt-8 p-3 sm:p-6 md:p-8 bg-secondary/10 !border-none rounded-none ring-0"
         variant="outline"
       >
-        <template #header>
-          <div class="flex items-center justify-between ">
-            <h2 class="m-0 pt-2">Send Us a Message</h2>
+
+
+        <div class="mb-6 text-center border-b border-stone-700 pb-8">
+          <div class="text-lg font-semibold text-stone-200">Call or Email Us Directly:</div>
+          <div class="mt-2">
+            <span class="inline-block mr-4">
+              <UIcon
+                name="i-mdi-phone"
+                class="mr-1 align-middle"
+                size="18"
+              />
+              <a
+                href="tel:17188501300"
+                class="text-primary font-medium hover:underline"
+              >(718) 850-1300</a>
+            </span>
+            <span class="inline-block">
+              <UIcon
+                name="i-mdi-email"
+                class="mr-1 align-middle"
+                size="18"
+              />
+              <a
+                href="mailto:nhm1@newhavenministries.org"
+                class="text-primary font-medium hover:underline"
+              >nhm1@newhavenministries.org</a>
+            </span>
           </div>
-        </template>
+        </div>
 
         <div class="space-y-4">
           <UAlert
@@ -153,7 +150,7 @@ function onError(e: FormErrorEvent) {
           ref="formRef"
           :state="form"
           :validate="validate"
-          class="space-y-6"
+          class="space-y-3 sm:space-y-6 !border-none ring-0"
           @submit="onSubmit"
           @error="onError"
         >
@@ -161,11 +158,13 @@ function onError(e: FormErrorEvent) {
             label="Name"
             name="name"
             class="w-full"
+            label-class="!font-semibold !text-white"
           >
             <UInput
               v-model="form.name"
               placeholder="Your full name"
-              class="w-full rounded-none"
+              class="w-full !rounded-none"
+              size="xl"
             />
           </UFormField>
 
@@ -173,12 +172,14 @@ function onError(e: FormErrorEvent) {
             label="Email"
             name="email"
             class="w-full"
+            label-class="!font-semibold !text-white"
           >
             <UInput
               v-model="form.email"
               type="email"
               placeholder="you@example.com"
-              class="w-full rounded-none"
+              class="w-full !rounded-none"
+              size="xl"
             />
           </UFormField>
 
@@ -186,12 +187,14 @@ function onError(e: FormErrorEvent) {
             label="Phone"
             name="phone"
             class="w-full"
+            label-class="!font-semibold !text-white"
           >
             <UInput
               v-model="form.phone"
               type="tel"
               placeholder="(718) 850-1300"
-              class="w-full rounded-none"
+              class="w-full !rounded-none"
+              size="xl"
             />
           </UFormField>
 
@@ -199,24 +202,26 @@ function onError(e: FormErrorEvent) {
             label="Message"
             name="message"
             class="w-full"
+            label-class="!font-semibold !text-white"
           >
             <UTextarea
               v-model="form.message"
               :rows="6"
               placeholder="How can we pray for you, or how can we help?"
-              class="w-full rounded-none"
+              class="w-full !rounded-none"
+              size="xl"
             />
           </UFormField>
 
-          <div class="flex items-center gap-4">
+          <div class="pt-2 text-center">
             <UButton
               :loading="submitting"
               :disabled="submitting"
               type="submit"
               color="primary"
-              size="lg"
+              size="xl"
               variant="solid"
-              class="rounded-none w-full md:w-auto justify-center text-center"
+              class="w-full font-bold rounded-none cursor-pointer"
             >
               <template
                 #leading
@@ -228,7 +233,7 @@ function onError(e: FormErrorEvent) {
                   size="20"
                 />
               </template>
-              Send Message
+              <span class="text-center w-full">Send Message</span>
             </UButton>
           </div>
         </UForm>
@@ -237,4 +242,34 @@ function onError(e: FormErrorEvent) {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+:deep(input),
+:deep(textarea) {
+  border-radius: 0 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  color: white !important;
+}
+
+:deep(input[type="date"]) {
+  color: #9ca3af !important;
+}
+
+:deep(input[type="date"]:focus),
+:deep(input[type="date"]:valid) {
+  color: white !important;
+}
+
+:deep(input::placeholder),
+:deep(textarea::placeholder),
+:deep(input::-webkit-input-placeholder),
+:deep(input::-moz-placeholder) {
+  color: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1 !important;
+}
+
+:deep(label) {
+  color: white !important;
+  font-weight: 600 !important;
+}
+</style>

@@ -102,7 +102,7 @@ const siteName = appConfig.siteName
         </div>
       </div>
     </div>
-    <div class="text-center text-xs text-gray-500 py-4 border-t border-stone-800 bg-stone-900/50">&copy; {{ new
+    <div class="text-center text-xs text-gray-500 py-4 border-t border-stone-800 bg-stone-950">&copy; {{ new
       Date().getFullYear() }} {{ siteName }}. All rights reserved.</div>
   </footer>
 </template>

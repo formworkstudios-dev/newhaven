@@ -77,7 +77,7 @@ onUnmounted(() => {
           alt="Logo"
           class="h-7 w-7 sm:h-8 sm:w-8 object-contain"
         />
-        <span class="!font-bold">{{ siteName }}</span>
+        <span class="!font-black">{{ siteName }}</span>
       </NuxtLink>
       <button
         @click="toggleMobileMenu"
@@ -119,7 +119,7 @@ onUnmounted(() => {
           class="nav-link"
           exact-active-class="nav-link-active"
         >NextGen</NuxtLink>
-        
+
         <NuxtLink
           to="/contact"
           class="nav-link"
@@ -132,7 +132,7 @@ onUnmounted(() => {
           class="nav-link whitespace-nowrap"
         >Plan Your Visit</a>
         <NuxtLink to="/donate">
-          <UButton class="font-bold text-xs lg:text-sm">GIVE TODAY</UButton>
+          <UButton class="font-bold text-xs lg:text-sm cursor-pointer">GIVE TODAY</UButton>
         </NuxtLink>
       </div>
     </div>
@@ -184,7 +184,7 @@ onUnmounted(() => {
             @click="closeMobileMenu"
             class="hover:text-primary transition-colors"
           >NextGen</NuxtLink>
-          
+
           <NuxtLink
             to="/contact"
             @click="closeMobileMenu"
@@ -200,8 +200,9 @@ onUnmounted(() => {
           <NuxtLink
             to="/donate"
             @click="closeMobileMenu"
+            class="w-full"
           >
-            <UButton class="font-bold px-8 py-3 text-base">GIVE TODAY</UButton>
+            <UButton class="font-bold px-8 py-3 text-base cursor-pointer w-full justify-center">GIVE TODAY</UButton>
           </NuxtLink>
         </div>
       </div>

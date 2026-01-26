@@ -10,6 +10,7 @@ export interface Event {
   description: string;
   type: EventType;
   featured?: boolean;
+  homepage?: boolean;
 }
 
 export const events: Event[] = [
@@ -24,6 +25,7 @@ export const events: Event[] = [
       "Join us for worship and teaching as we gather together to honor God.",
     type: "ongoing",
     featured: false,
+    homepage: true,
   },
   {
     id: "bible-study",
@@ -36,6 +38,7 @@ export const events: Event[] = [
       "Wednesday bible study for all ages. Dive deep into God's Word with our community.",
     type: "ongoing",
     featured: false,
+    homepage: true,
   },
   {
     id: "fasting-prayer",
@@ -55,7 +58,7 @@ export const events: Event[] = [
     date: "Every Friday",
     time: "7:00 PM",
     title: "Youth Night",
-    location: "Family Center",
+    location: "Main Sanctuary",
     description:
       "Games, worship, and a powerful word for students 6th–12th grade.",
     type: "ongoing",
@@ -72,6 +75,18 @@ export const events: Event[] = [
       "Join us as we seek God together for our church and community.",
     type: "ongoing",
     featured: false,
+  },
+  {
+    id: "rooted",
+    image: "/rooted.png",
+    date: "Launching February 4, 2026",
+    time: "$20 - Includes class material",
+    title: "ROOTED",
+    location: "Main Sanctuary",
+    description:
+      "WHAT IF your life looked totally different in a few weeks? Would it be worth it? Register Now - $20 Includes class material.",
+    type: "featured",
+    featured: true,
   },
 ];
 

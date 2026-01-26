@@ -13,7 +13,39 @@ export default defineNuxtConfig({
     "nuxt-swiper",
   ],
 
+  site: {
+    url: "https://newhavenministries.org",
+    name: "New Haven Ministries",
+    description:
+      "New Haven Ministries is a spirit-filled church in Richmond Hill, Queens, NY. Join us for worship, Bible study, youth programs, and community events.",
+    defaultLocale: "en",
+  },
+
+  ssr: false,
+
+  nitro: {
+    preset: process.dev ? "node-server" : "static",
+  },
+
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico?v=3",
+        },
+      ],
+    },
+  },
+
   routeRules: {
-    '/plan-your-visit': { redirect: { to: 'https://app.textinchurch.com/connect-cards/AxP3gJSuf5DT7GiJCkY5', statusCode: 301 } },
+    "/plan-your-visit": {
+      redirect: {
+        to: "https://app.textinchurch.com/connect-cards/AxP3gJSuf5DT7GiJCkY5",
+        statusCode: 301,
+      },
+    },
   },
 });
