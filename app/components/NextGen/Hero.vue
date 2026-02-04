@@ -40,7 +40,7 @@
         <div class="flex flex-col md:flex-row gap-0 md:gap-4 bg-stone-900/80 overflow-hidden backdrop-blur-sm">
           <div class="w-full md:w-64 flex-shrink-0">
             <img
-              src="/gallery/mom-baby.webp"
+              src="/gallery/man-at-church.webp"
               alt="Chosen Youth"
               class="w-full h-auto object-contain md:object-cover md:h-full"
             />

@@ -19,7 +19,7 @@ const upcomingEvents = events.filter(e => e.featured === true);
         v-if="upcomingEvents.length > 0"
         class="mb-20"
       >
-        <h3 class="text-left pb-2 text-2xl font-bold text-secondary mb-6">Featured Events</h3>
+        <h3 class="text-left pb-2 text-3xl font-bold text-secondary mb-6">Featured Events</h3>
         <div class="flex flex-col gap-6 w-full">
           <EventCardAlt
             v-for="event in upcomingEvents"
@@ -30,7 +30,7 @@ const upcomingEvents = events.filter(e => e.featured === true);
       </section>
 
       <!-- Ongoing Events Section -->
-      <h3 class="text-left text-2xl font-bold text-secondary pb-8">Events at NHM</h3>
+      <h3 class="text-left text-3xl font-bold text-secondary pb-8">Events at NHM</h3>
       <div class="flex flex-col gap-12 items-stretch overflow-visible">
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto">

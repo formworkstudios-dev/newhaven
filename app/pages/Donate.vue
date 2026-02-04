@@ -7,7 +7,6 @@
   <div>
     <GiveHero />
     <!-- <GiveV1 /> -->
-    <GiveV2 />
   </div>
 </template>
 

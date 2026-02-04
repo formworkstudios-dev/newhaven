@@ -31,7 +31,7 @@ export const events: Event[] = [
     id: "bible-study",
     image: "/bible-study.jpg",
     date: "Every Wednesday",
-    time: "6:00 PM",
+    time: "7:00 PM",
     title: "Bible Study",
     location: "Main Sanctuary",
     description:
@@ -40,22 +40,22 @@ export const events: Event[] = [
     featured: false,
     homepage: true,
   },
-  {
-    id: "fasting-prayer",
-    image: "/weekly.jpeg",
-    date: "Every Friday",
-    time: "7:00 PM",
-    title: "Fasting & Prayer",
-    location: "Main Sanctuary",
-    description:
-      "Weekly gathering for fasting and prayer. Seeking God together for breakthrough and revival.",
-    type: "weekly",
-    featured: false,
-  },
+  // {
+  //   id: "fasting-prayer",
+  //   image: "/weekly.jpeg",
+  //   date: "TBD",
+  //   time: "7:00 PM",
+  //   title: "Fasting & Prayer",
+  //   location: "Main Sanctuary",
+  //   description:
+  //     "Special gathering for fasting and prayer. Seeking God together for breakthrough and revival.",
+  //   type: "featured",
+  //   featured: true,
+  // },
   {
     id: "youth-night",
     image: "/youth.jpeg",
-    date: "Every Friday",
+    date: "Every Wednesday",
     time: "7:00 PM",
     title: "Youth Night",
     location: "Main Sanctuary",
@@ -67,8 +67,8 @@ export const events: Event[] = [
   {
     id: "prayer-gathering",
     image: "/prayer3.jpg",
-    date: "Every Saturday",
-    time: "9:00 AM",
+    date: "Last Friday of Every Month",
+    time: "7:00 PM",
     title: "Prayer Gathering",
     location: "Main Sanctuary",
     description:

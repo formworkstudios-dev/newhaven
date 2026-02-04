@@ -55,7 +55,7 @@
       </a>
 
       <!-- View Details Link -->
-      <div class="pt-2">
+      <!-- <div class="pt-2">
         <div
           class="flex items-center gap-2 text-brand-500 font-bold hover:text-brand-400 transition-colors cursor-pointer group"
         >
@@ -65,7 +65,7 @@
             class="group-hover:translate-x-1 transition-transform"
           />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -127,7 +127,7 @@
         </a>
 
         <!-- View Details Link -->
-        <div class="pt-2">
+        <!-- <div class="pt-2">
           <div
             class="flex items-center gap-2 text-brand-500 font-bold hover:text-brand-400 transition-colors cursor-pointer group"
           >
@@ -137,7 +137,7 @@
               class="group-hover:translate-x-1 transition-transform"
             />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
