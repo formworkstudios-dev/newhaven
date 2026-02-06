@@ -1,8 +1,6 @@
 import { setResponseStatus } from "h3";
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig();
-
   // Parse and validate body
   const body = await readBody<{
     name?: string;
@@ -29,56 +27,23 @@ export default defineEventHandler(async (event) => {
     return { status: "validation_error", errors };
   }
 
-  // Initialize email client via dynamic import
-  if (!config.resendApiKey) {
-    setResponseStatus(event, 500);
-    return { status: "error", message: "Email service not configured." };
-  }
-
-  let ResendCtor: unknown;
-  try {
-    const mod = await import("resend");
-    ResendCtor = (mod as Record<string, unknown>)?.Resend;
-  } catch {
-    setResponseStatus(event, 500);
-    return {
-      status: "error",
-      message: "Email service dependency not installed.",
-    };
-  }
-
-  interface ResendLike {
-    emails: {
-      send: (args: {
-        from: string;
-        to: string[];
-        bcc?: string[];
-        subject: string;
-        html: string;
-        text: string;
-      }) => Promise<unknown>;
-    };
-  }
-
-  const ResendClass = ResendCtor as new (apiKey?: string) => unknown;
-  const resend = new ResendClass(config.resendApiKey as string) as ResendLike;
-
-  // Compose email content (Kilmer Construction)
-  const subject = `New Construction Project Inquiry from ${name}`;
+  // Compose email content
+  const subject = `New Inquiry from ${name}`;
   const html = `
-    <h2>New Construction Project Inquiry</h2>
+    <h2>New Contact Form Submission</h2>
     <p><strong>Name:</strong> ${escapeHtml(name)}</p>
     <p><strong>Email:</strong> ${escapeHtml(email)}</p>
     <p><strong>Phone:</strong> ${phone ? escapeHtml(phone) : "Not provided"}</p>
     <p><strong>Message:</strong></p>
     <p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
   `;
-  const text = `New Construction Project Inquiry\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`;
+  const text = `New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`;
 
   try {
-    const result = await resend.emails.send({
-      from: "Kilmer Construction Website <no-reply@formworkstudios.xyz>", // keep email, change display name
-      to: ["hello@formworkstudios.com"], // per request: keep addresses as-is
+    const result = await useResend().emails.send({
+      from: "New Haven Ministries <no-reply@formworkstudios.xyz>",
+      to: ["Janellejairam@gmail.com"],
+      cc: ["Kathysingh30@gmail.com"],
       bcc: ["mikesynan@gmail.com"],
       subject,
       html,

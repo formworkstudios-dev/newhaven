@@ -27,7 +27,7 @@ function scrollToNext() {
       disablePictureInPicture
       controlsList="nodownload noremoteplayback nofullscreen"
       class="absolute inset-0 w-full h-full object-cover z-0"
-      src="/nhm_web.mp4"
+      src="/nhm.webm"
     ></video>
     <!-- Main hero content (centered) -->
     <div class="hidden">

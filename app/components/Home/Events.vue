@@ -2,30 +2,40 @@
   setup
   lang="ts"
 >
-import { ref } from 'vue';
-import EventCard from './EventCard.vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { events as allEvents } from '~/data/events';
 
 const showHeading = ref(false);
 const headingRef = ref(null);
 const showDesc = ref(false);
 const descRef = ref(null);
 const getInvolvedRef = ref(null);
-const events = [
-  {
-    name: "Sunday Service",
-    description: "Join us for worship and teaching.",
-    time: "Sundays | 10:00 AM",
-    location: "Main Sanctuary",
-    image: "/sunday-service.jpeg",
-  },
-  {
-    name: "Bible Study",
-    description: "Wednesday bible study for all ages.",
-    time: "Wednesdays | 6:00 PM",
-    location: "Main Sanctuary",
-    image: "/bible-study.jpg",
-  },
-];
+
+// Filter events marked for homepage display
+const events = allEvents.filter(event => event.featured);
+
+const activeIndex = ref(0);
+let rotationTimer: ReturnType<typeof setInterval> | undefined;
+
+const activeEvent = computed(() => events[activeIndex.value]);
+
+const goTo = (index: number) => {
+  if (!events.length) return;
+  activeIndex.value = ((index % events.length) + events.length) % events.length;
+};
+
+const next = () => {
+  goTo(activeIndex.value + 1);
+};
+
+onMounted(() => {
+  if (events.length <= 1) return;
+  rotationTimer = setInterval(next, 6000);
+});
+
+onBeforeUnmount(() => {
+  if (rotationTimer) clearInterval(rotationTimer);
+});
 </script>
 
 <template>
@@ -39,7 +49,17 @@ const events = [
             Us</span>.</h2>
         <div class="text-left max-w-xl text-xl animate-fade-in-up">
           New Haven Ministries is more than a church—we're a family united by faith, committed to growing together and
-          making a difference in our community and beyond.
+          making a difference in our community and beyond.<br />
+          <div class="mt-4 text-base text-gray-300 space-y-1">
+            <div>
+              <span class="text-gray-200 font-medium">Sunday Service</span>
+              <span class="text-gray-400"> — Every Sunday • 10:00 AM</span>
+            </div>
+            <div>
+              <span class="text-gray-200 font-medium">Bible Study</span>
+              <span class="text-gray-400"> — Every Wednesday • 7:00 PM</span>
+            </div>
+          </div>
         </div>
         <!-- Blob directly under text -->
         <svg
@@ -68,7 +88,7 @@ const events = [
         </NuxtLink>
       </div>
       <!-- Right: Event Cards stacked vertically -->
-      <div class="flex-1 flex flex-col gap-6 w-full max-w-md mx-auto">
+      <div class="flex-1 flex flex-col gap-6 w-full max-w-4xl mx-auto">
         <div
           class="w-full bg-gradient-to-r from-primary/20 to-primary/10 border border-gray-800 px-6 py-4 flex items-center justify-between"
         >
@@ -79,19 +99,67 @@ const events = [
           />
         </div>
 
-        <EventCard
-          v-for="event in events"
-          :key="event.name"
-          :name="event.name"
-          :description="event.description"
-          :time="event.time"
-          :location="event.location"
-          :image="event.image"
-        />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            v-if="activeEvent"
+            class="md:col-span-2"
+          >
+            <NuxtLink
+              :to="`/Events/${activeEvent.id}`"
+              class="block w-full"
+              aria-label="View event details"
+            >
+              <Transition
+                name="fade"
+                mode="out-in"
+              >
+                <img
+                  :key="activeEvent.id"
+                  :src="activeEvent.image || '/placeholder-event.jpg'"
+                  :alt="activeEvent.title"
+                  class="w-full h-auto max-h-[70vh] object-contain"
+                  @error="(e) => (e.target as HTMLImageElement).src = '/placeholder-event.jpg'"
+                />
+              </Transition>
+            </NuxtLink>
+
+            <div
+              v-if="events.length > 1"
+              class="flex items-center justify-center gap-2 mt-3"
+            >
+              <button
+                v-for="(event, idx) in events"
+                :key="event.id"
+                type="button"
+                class="h-2.5 w-2.5 rounded-full transition-colors"
+                :class="idx === activeIndex
+                  ? 'bg-gray-200'
+                  : 'bg-gray-600/60 hover:bg-gray-500/80'"
+                :aria-label="`Go to event ${idx + 1}`"
+                @click="goTo(idx)"
+              />
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
   </UContainer>
 </template>
 
-<style scoped></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 400ms ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+</style>

@@ -6,8 +6,8 @@
       class="absolute inset-0 w-full h-full object-cover z-0"
     />
     <div class="absolute inset-0 bg-black/60 z-10"></div>
-    <div class="relative z-20 flex flex-col items-center justify-center w-full h-full">
-      <h2 class="text-5xl font-bold  mb-4 drop-shadow-lg pt-10 pb-4 text-secondary">Join us for upcoming
+    <div class="relative z-20 flex flex-col items-center justify-center w-full h-full px-10">
+      <h2 class="text-5xl font-bold  mb-4 drop-shadow-lg pt-10 pb-4 text-secondary text-center">Join us for upcoming
         events</h2>
     </div>
     <!-- Fade to black stone-950 strip at bottom -->

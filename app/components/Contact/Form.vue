@@ -42,7 +42,7 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
   serverError.value = null
   success.value = false
   try {
-    const { error } = await useFetch('/api/contact', {
+    const { data, error } = await useFetch('/api/contact', {
       method: 'POST',
       body: { ...event.data },
     })
@@ -51,8 +51,13 @@ async function onSubmit(event: FormSubmitEvent<typeof form>) {
       serverError.value = err?.message || 'Something went wrong. Please try again.'
       return
     }
-    success.value = true
-    Object.assign(form, { name: '', email: '', phone: '', message: '' })
+    // Check response status
+    if (data.value?.status === 'sent') {
+      success.value = true
+      Object.assign(form, { name: '', email: '', phone: '', message: '' })
+    } else if (data.value?.status === 'error') {
+      serverError.value = data.value.message || 'Failed to send email'
+    }
   } finally {
     submitting.value = false
   }

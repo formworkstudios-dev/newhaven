@@ -21,7 +21,7 @@ const siteName = appConfig.siteName
             community with love and purpose.</div>
           <div class="flex gap-4 mt-2">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/new.haven.73"
               target="_blank"
               rel="noopener"
               aria-label="Facebook"
@@ -32,7 +32,7 @@ const siteName = appConfig.siteName
               />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/newhaven2315"
               target="_blank"
               rel="noopener"
               aria-label="Instagram"
@@ -43,7 +43,7 @@ const siteName = appConfig.siteName
               />
             </a>
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@NewHavenMinistries"
               target="_blank"
               rel="noopener"
               aria-label="YouTube"

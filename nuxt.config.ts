@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxtjs/seo",
     "nuxt-swiper",
+    "nuxt-resend",
   ],
 
   site: {
@@ -47,5 +48,9 @@ export default defineNuxtConfig({
         statusCode: 301,
       },
     },
+  },
+
+  runtimeConfig: {
+    resendApiKey: "",
   },
 });

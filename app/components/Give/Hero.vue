@@ -14,7 +14,7 @@
       />
       <h2 class="text-5xl font-bold mb-4 drop-shadow-lg text-secondary">Give to NHM</h2>
       <img
-        src="/give.jpeg"
+        src="/give2.jpg"
         alt="Give"
         class="max-w-2xl w-full object-contain"
       />

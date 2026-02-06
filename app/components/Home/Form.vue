@@ -8,19 +8,21 @@ import { z } from 'zod'
 const schema = z.object({
   name: z.string().min(2, 'Name is required'),
   email: z.string().email('Valid email required'),
-  date: z.string().min(1, 'Date is required'),
+  phone: z.string().optional(),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 })
 
 const form = ref({
   name: '',
   email: '',
-  date: '',
+  phone: '',
   message: '',
 })
 
 const errors = ref<{ [key: string]: string[] }>({})
 const submitted = ref(false)
+const loading = ref(false)
+const errorMessage = ref('')
 
 function validate() {
   const result = schema.safeParse(form.value)
@@ -28,10 +30,45 @@ function validate() {
   return result.success
 }
 
-function handleSubmit() {
-  if (validate()) {
-    submitted.value = true
-    // You can send the form data here
+async function handleSubmit() {
+  if (!validate()) return
+
+  loading.value = true
+  errorMessage.value = ''
+
+  try {
+    const response = await $fetch('/api/contact', {
+      method: 'POST',
+      body: {
+        name: form.value.name,
+        email: form.value.email,
+        phone: form.value.phone,
+        message: form.value.message,
+      }
+    })
+
+    if (response?.status === 'sent') {
+      submitted.value = true
+      // Reset form
+      form.value = {
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      }
+    } else if (response?.status === 'error') {
+      errorMessage.value = response.message || 'Failed to send message'
+    }
+  } catch (error: any) {
+    if (error.data?.errors) {
+      errorMessage.value = error.data.errors.join(' ')
+    } else if (error.data?.message) {
+      errorMessage.value = error.data.message
+    } else {
+      errorMessage.value = 'Failed to send message. Please try again.'
+    }
+  } finally {
+    loading.value = false
   }
 }
 </script>
@@ -74,16 +111,16 @@ function handleSubmit() {
           />
         </UFormField>
         <UFormField
-          label="Date of Visit"
-          name="date"
-          :error="errors.date?.[0]"
+          label="Phone (optional)"
+          name="phone"
+          :error="errors.phone?.[0]"
           class="w-full"
           label-class="!font-semibold !text-white"
         >
           <UInput
-            v-model="form.date"
-            placeholder="YYYY-MM-DD"
-            type="date"
+            v-model="form.phone"
+            placeholder="Your phone number"
+            type="tel"
             class="w-full !rounded-none"
             size="xl"
           />
@@ -108,13 +145,19 @@ function handleSubmit() {
             type="submit"
             color="primary"
             size="xl"
+            :loading="loading"
+            :disabled="loading"
             class="w-full font-bold rounded-none cursor-pointer"
-          ><span class="text-center w-full">Send My Message</span></UButton>
+          ><span class="text-center w-full">{{ loading ? 'Sending...' : 'Send My Message' }}</span></UButton>
         </div>
         <div
           v-if="submitted"
-          class="mt-4 text-green-400 text-center"
+          class="mt-4 text-green-400 text-center font-semibold"
         >Thank you! We'll be in touch soon.</div>
+        <div
+          v-if="errorMessage"
+          class="mt-4 text-red-400 text-center font-semibold"
+        >{{ errorMessage }}</div>
       </UForm>
     </UCard>
   </div>
@@ -126,15 +169,6 @@ function handleSubmit() {
   border-radius: 0 !important;
   background-color: rgba(255, 255, 255, 0.1) !important;
   backdrop-filter: blur(10px);
-  color: white !important;
-}
-
-:deep(input[type="date"]) {
-  color: #9ca3af !important;
-}
-
-:deep(input[type="date"]:focus),
-:deep(input[type="date"]:valid) {
   color: white !important;
 }
 
