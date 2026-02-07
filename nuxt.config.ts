@@ -23,11 +23,9 @@ export default defineNuxtConfig({
   },
 
   ssr: false,
-
   nitro: {
-    preset: process.dev ? "node-server" : "static",
+    preset: "vercel",
   },
-
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
