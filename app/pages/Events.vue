@@ -7,7 +7,9 @@ import EventsHero from '~/components/Events/Hero.vue';
 import { events } from '~/data/events';
 
 const ongoingEvents = events.filter(e => e.type === 'ongoing' || e.type === 'weekly');
-const upcomingEvents = events.filter(e => e.featured === true);
+const upcomingEvents = events
+  .filter(e => e.featured === true)
+  .sort((a, b) => a.firstOccurrence.localeCompare(b.firstOccurrence));
 </script>
 
 <template>

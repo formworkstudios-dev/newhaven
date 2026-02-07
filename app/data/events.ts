@@ -127,6 +127,20 @@ export const events: Event[] = [
     cost: "",
   },
   {
+    id: "celebrate-love",
+    image: "/events/love.JPG",
+    date: "Sunday, February 15, 2026",
+    time: "10:00 AM",
+    firstOccurrence: "2026-02-15",
+    title: "Celebrate Love",
+    location: "Main Sanctuary",
+    description:
+      "Celebrate Love with New Haven Ministries this Valentines day weekend.",
+    type: "featured",
+    featured: true,
+    homepage: true,
+  },
+  {
     id: "egg-hunt-2026",
     image: "/events/egg-hunt.webp",
     date: "Saturday, March 28, 2026",

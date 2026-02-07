@@ -42,9 +42,9 @@ export default defineEventHandler(async (event) => {
   try {
     const result = await useResend().emails.send({
       from: "New Haven Ministries <hello@formworkstudios.xyz>",
-      to: ["mikesynan@gmail.com"],
-      // cc: ["Kathysingh30@gmail.com"],
-      // bcc: ["mikesynan@gmail.com"],
+      to: ["Janellejairam@gmail.com"],
+      cc: ["Kathysingh30@gmail.com"],
+      bcc: ["mikesynan@gmail.com"],
       subject,
       html,
       text,
