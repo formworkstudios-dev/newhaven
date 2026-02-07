@@ -13,14 +13,14 @@ const upcomingEvents = events.filter(e => e.featured === true);
 <template>
   <div class="relative overflow-visible">
     <EventsHero />
-    <UContainer class="py-20 md:py-32 relative z-[100] gap-20">
+    <UContainer class="py-16 md:py-32 relative z-[100] gap-20">
       <!-- Featured Events Section -->
       <section
         v-if="upcomingEvents.length > 0"
         class="mb-20"
       >
         <h3 class="text-left pb-2 text-3xl font-bold text-secondary mb-6">Featured Events</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full items-start">
+        <div class="flex flex-col gap-6 w-full items-stretch">
           <EventCardAlt
             v-for="event in upcomingEvents"
             :key="event.id"

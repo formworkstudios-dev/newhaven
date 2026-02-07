@@ -19,6 +19,7 @@ let rotationTimer: ReturnType<typeof setInterval> | undefined;
 
 const activeEvent = computed(() => events[activeIndex.value]);
 
+
 const goTo = (index: number) => {
   if (!events.length) return;
   activeIndex.value = ((index % events.length) + events.length) % events.length;
@@ -27,6 +28,11 @@ const goTo = (index: number) => {
 const next = () => {
   goTo(activeIndex.value + 1);
 };
+
+const prev = () => {
+  goTo(activeIndex.value - 1);
+};
+
 
 onMounted(() => {
   if (events.length <= 1) return;
@@ -104,24 +110,44 @@ onBeforeUnmount(() => {
             v-if="activeEvent"
             class="md:col-span-2"
           >
-            <NuxtLink
-              :to="`/Events/${activeEvent.id}`"
-              class="block w-full"
-              aria-label="View event details"
-            >
-              <Transition
-                name="fade"
-                mode="out-in"
+            <div class="w-full relative">
+              <button
+                v-if="events.length > 1"
+                type="button"
+                class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+                aria-label="Previous event"
+                @click="prev"
               >
-                <img
-                  :key="activeEvent.id"
-                  :src="activeEvent.image || '/placeholder-event.jpg'"
-                  :alt="activeEvent.title"
-                  class="w-full h-auto max-h-[70vh] object-contain"
-                  @error="(e) => (e.target as HTMLImageElement).src = '/placeholder-event.jpg'"
-                />
-              </Transition>
-            </NuxtLink>
+                <UIcon name="i-mdi-chevron-left" class="text-2xl" />
+              </button>
+              <button
+                v-if="events.length > 1"
+                type="button"
+                class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+                aria-label="Next event"
+                @click="next"
+              >
+                <UIcon name="i-mdi-chevron-right" class="text-2xl" />
+              </button>
+              <NuxtLink
+                :to="`/Events/${activeEvent.id}`"
+                class="block w-full"
+                aria-label="View event details"
+              >
+                <Transition
+                  name="fade"
+                  mode="out-in"
+                >
+                  <img
+                    :key="activeEvent.id"
+                    :src="activeEvent.image || '/placeholder-event.jpg'"
+                    :alt="activeEvent.title"
+                    class="w-full h-auto max-h-[70vh] object-contain"
+                    @error="(e) => (e.target as HTMLImageElement).src = '/placeholder-event.jpg'"
+                  />
+                </Transition>
+              </NuxtLink>
+            </div>
 
             <div
               v-if="events.length > 1"
@@ -131,7 +157,7 @@ onBeforeUnmount(() => {
                 v-for="(event, idx) in events"
                 :key="event.id"
                 type="button"
-                class="h-2.5 w-2.5 rounded-full transition-colors"
+                class="h-2.5 w-2.5 rounded-full transition-colors cursor-pointer"
                 :class="idx === activeIndex
                   ? 'bg-gray-200'
                   : 'bg-gray-600/60 hover:bg-gray-500/80'"

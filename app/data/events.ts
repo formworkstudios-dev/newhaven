@@ -19,7 +19,7 @@ export interface Event {
 export const events: Event[] = [
   {
     id: "sunday-service",
-    image: "/sunday-service.jpeg",
+    image: "/events/sunday.webp",
     date: "Every Sunday",
     time: "10:00 AM",
     firstOccurrence: "2026-02-08",
@@ -92,7 +92,7 @@ export const events: Event[] = [
     title: "ROOTED",
     location: "Main Sanctuary",
     description:
-      "WHAT IF your life looked totally different in a few weeks? Would it be worth it? Register Now - $20 Includes class material.",
+      "WHAT IF your life looked totally different in a few weeks? Would it be worth it?",
     type: "featured",
     featured: true,
     cost: "$20",
@@ -125,6 +125,19 @@ export const events: Event[] = [
     featured: true,
     homepage: true,
     cost: "",
+  },
+  {
+    id: "egg-hunt-2026",
+    image: "/events/egg-hunt.webp",
+    date: "Saturday, March 28, 2026",
+    time: "12-3 PM",
+    firstOccurrence: "2026-03-28",
+    title: "Egg Hunt",
+    location: "131-10 97 Ave, Richmond Hill",
+    description: "Join us for an egg hunt and family fun.",
+    type: "featured",
+    featured: true,
+    homepage: true,
   },
 ];
 

@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
   }
 
   // Compose email content
-  const subject = `New Inquiry from ${name}`;
+  const subject = `TEST New Inquiry from ${name}`;
   const html = `
     <h2>New Contact Form Submission</h2>
     <p><strong>Name:</strong> ${escapeHtml(name)}</p>
@@ -42,9 +42,9 @@ export default defineEventHandler(async (event) => {
   try {
     const result = await useResend().emails.send({
       from: "New Haven Ministries <no-reply@formworkstudios.xyz>",
-      to: ["Janellejairam@gmail.com"],
-      cc: ["Kathysingh30@gmail.com"],
-      bcc: ["mikesynan@gmail.com"],
+      to: ["mikesynan@gmail.com"],
+      // cc: ["Kathysingh30@gmail.com"],
+      // bcc: ["mikesynan@gmail.com"],
       subject,
       html,
       text,
