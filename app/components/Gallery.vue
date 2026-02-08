@@ -6,6 +6,7 @@ const galleryImages = [
   'gallery/church-gathering-queens-ny.webp',
   'gallery/church-performance-queens.webp',
   'gallery/man-at-church.webp',
+  'gallery/sunday2.webp',
   'gallery/man-performing-at-church-queens.webp',
   'gallery/mom-baby.webp',
   'gallery/new-haven-family.webp',
