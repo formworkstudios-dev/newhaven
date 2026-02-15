@@ -1,0 +1,55 @@
+{
+  "id": "church_event",
+  "type": "SharedSlice",
+  "name": "ChurchEvent",
+  "description": "ChurchEvent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "event_title": {
+          "type": "Text",
+          "config": {
+            "label": "Event Title",
+            "placeholder": "New Haven Ministries Event"
+          }
+        },
+        "event_description": {
+          "type": "Text",
+          "config": {
+            "label": "Event Description",
+            "placeholder": "New Haven Ministries event description placeholder"
+          }
+        },
+        "event_image": {
+          "type": "Image",
+          "config": {
+            "label": "Event Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "cost": {
+          "type": "Text",
+          "config": {
+            "label": "Cost",
+            "placeholder": "Event Cost"
+          }
+        },
+        "location": {
+          "type": "Text",
+          "config": {
+            "label": "Location",
+            "placeholder": "Location"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

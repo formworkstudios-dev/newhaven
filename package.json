@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@nuxt/content": "^3.7.1",
@@ -15,6 +16,7 @@
     "@nuxt/image": "^1.11.0",
     "@nuxt/ui": "^4.0.0-alpha.2",
     "@nuxtjs/seo": "^3.2.2",
+    "@prismicio/vue": "^6.1.1",
     "@uploadthing/vue": "^7.3.3",
     "better-sqlite3": "^12.2.0",
     "eslint": "^9.36.0",
@@ -30,6 +32,10 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "baseline-browser-mapping": "^2.9.19"
+    "@nuxtjs/prismic": "^5.2.0",
+    "@prismicio/client": "^7.21.6",
+    "@slicemachine/adapter-nuxt": "^0.3.95",
+    "baseline-browser-mapping": "^2.9.19",
+    "slice-machine-ui": "^2.21.1"
   }
 }

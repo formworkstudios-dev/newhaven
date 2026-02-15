@@ -1,3 +1,4 @@
+import { apiEndpoint, repositoryName } from "./slicemachine.config.json";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -12,6 +13,7 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "nuxt-swiper",
     "nuxt-resend",
+    "@nuxtjs/prismic"
   ],
 
   site: {
@@ -23,9 +25,11 @@ export default defineNuxtConfig({
   },
 
   ssr: false,
+
   nitro: {
     preset: "vercel",
   },
+
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -51,4 +55,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     resendApiKey: "",
   },
+
+  prismic: {
+    endpoint: apiEndpoint || repositoryName
+  }
 });
