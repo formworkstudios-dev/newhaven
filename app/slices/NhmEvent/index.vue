@@ -1,19 +1,15 @@
-<script
-  setup
-  lang="ts"
->
+<script setup lang="ts">
 import type { Content } from "@prismicio/client";
 
-defineProps(getSliceComponentProps<Content.ChurchEventSlice>());
+defineProps(getSliceComponentProps<Content.NhmEventSlice>());
 </script>
 
 <template>
   <section
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
-    class="text-black text-2xl pt-20"
   >
-    Placeholder component for church_event (variation: {{ slice.variation }})
+    Placeholder component for nhm_event (variation: {{ slice.variation }})
     slices.
 
     <br />

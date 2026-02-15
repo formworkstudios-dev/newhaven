@@ -69,12 +69,34 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type NhmEventDocumentDataSlicesSlice = ChurchEventSlice;
+type NhmEventDocumentDataSlicesSlice = NhmEventSlice;
 
 /**
  * Content for NHM Event documents
  */
 interface NhmEventDocumentData {
+  /**
+   * Heading field in *NHM Event*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: This is the heading
+   * - **API ID Path**: nhm_event.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *NHM Event*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: This is the description
+   * - **API ID Path**: nhm_event.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  description: prismic.KeyTextField;
+
   /**
    * Slice Zone field in *NHM Event*
    *
@@ -106,88 +128,78 @@ export type NhmEventDocument<Lang extends string = string> =
 export type AllDocumentTypes = NhmEventDocument;
 
 /**
- * Primary content in *ChurchEvent → Default → Primary*
+ * Primary content in *NhmEvent → Default → Primary*
  */
-export interface ChurchEventSliceDefaultPrimary {
+export interface NhmEventSliceDefaultPrimary {
   /**
-   * Event Title field in *ChurchEvent → Default → Primary*
+   * Heading field in *NhmEvent → Default → Primary*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: New Haven Ministries Event
-   * - **API ID Path**: church_event.default.primary.event_title
+   * - **Placeholder**: this is a heading
+   * - **API ID Path**: nhm_event.default.primary.heading
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  event_title: prismic.KeyTextField;
+  heading: prismic.KeyTextField;
 
   /**
-   * Event Description field in *ChurchEvent → Default → Primary*
+   * location field in *NhmEvent → Default → Primary*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: New Haven Ministries event description placeholder
-   * - **API ID Path**: church_event.default.primary.event_description
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  event_description: prismic.KeyTextField;
-
-  /**
-   * Event Image field in *ChurchEvent → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: church_event.default.primary.event_image
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  event_image: prismic.ImageField<never>;
-
-  /**
-   * Cost field in *ChurchEvent → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Event Cost
-   * - **API ID Path**: church_event.default.primary.cost
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  cost: prismic.KeyTextField;
-
-  /**
-   * Location field in *ChurchEvent → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Location
-   * - **API ID Path**: church_event.default.primary.location
+   * - **Placeholder**: this is the location
+   * - **API ID Path**: nhm_event.default.primary.location
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   location: prismic.KeyTextField;
+
+  /**
+   * date field in *NhmEvent → Default → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nhm_event.default.primary.date
+   * - **Documentation**: https://prismic.io/docs/fields/date
+   */
+  date: prismic.DateField;
+
+  /**
+   * Description field in *NhmEvent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: this is the description
+   * - **API ID Path**: nhm_event.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  description: prismic.KeyTextField;
 }
 
 /**
- * Default variation for ChurchEvent Slice
+ * Default variation for NhmEvent Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type ChurchEventSliceDefault = prismic.SharedSliceVariation<
+export type NhmEventSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<ChurchEventSliceDefaultPrimary>,
+  Simplify<NhmEventSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *ChurchEvent*
+ * Slice variation for *NhmEvent*
  */
-type ChurchEventSliceVariation = ChurchEventSliceDefault;
+type NhmEventSliceVariation = NhmEventSliceDefault;
 
 /**
- * ChurchEvent Shared Slice
+ * NhmEvent Shared Slice
  *
- * - **API ID**: `church_event`
- * - **Description**: ChurchEvent
+ * - **API ID**: `nhm_event`
+ * - **Description**: NhmEvent
  * - **Documentation**: https://prismic.io/docs/slices
  */
-export type ChurchEventSlice = prismic.SharedSlice<
-  "church_event",
-  ChurchEventSliceVariation
+export type NhmEventSlice = prismic.SharedSlice<
+  "nhm_event",
+  NhmEventSliceVariation
 >;
 
 declare module "@prismicio/client" {
@@ -215,10 +227,10 @@ declare module "@prismicio/client" {
       NhmEventDocumentData,
       NhmEventDocumentDataSlicesSlice,
       AllDocumentTypes,
-      ChurchEventSlice,
-      ChurchEventSliceDefaultPrimary,
-      ChurchEventSliceVariation,
-      ChurchEventSliceDefault,
+      NhmEventSlice,
+      NhmEventSliceDefaultPrimary,
+      NhmEventSliceVariation,
+      NhmEventSliceDefault,
     };
   }
 }

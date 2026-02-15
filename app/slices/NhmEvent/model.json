@@ -1,0 +1,47 @@
+{
+  "id": "nhm_event",
+  "type": "SharedSlice",
+  "name": "NhmEvent",
+  "description": "NhmEvent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": "this is a heading"
+          }
+        },
+        "location": {
+          "type": "Text",
+          "config": {
+            "label": "location",
+            "placeholder": "this is the location"
+          }
+        },
+        "date": {
+          "type": "Date",
+          "config": {
+            "label": "date",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": "this is the description"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

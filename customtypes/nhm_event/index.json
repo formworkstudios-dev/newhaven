@@ -13,12 +13,26 @@
           "placeholder": ""
         }
       },
+      "heading": {
+        "type": "Text",
+        "config": {
+          "label": "Heading",
+          "placeholder": "This is the heading"
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": "This is the description"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "church_event": {
+            "nhm_event": {
               "type": "SharedSlice"
             }
           }
