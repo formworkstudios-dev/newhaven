@@ -69,68 +69,41 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type EventDocumentDataSlicesSlice = ChurchEventSlice;
+type NhmEventDocumentDataSlicesSlice = ChurchEventSlice;
 
 /**
- * Content for Event documents
+ * Content for NHM Event documents
  */
-interface EventDocumentData {
+interface NhmEventDocumentData {
   /**
-   * Slice Zone field in *Event*
+   * Slice Zone field in *NHM Event*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: event.slices[]
+   * - **API ID Path**: nhm_event.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/slices
    */
-  slices: prismic.SliceZone<EventDocumentDataSlicesSlice> /**
-   * Meta Title field in *Event*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: event.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */;
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Event*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: event.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Event*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: event.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  meta_image: prismic.ImageField<never>;
+  slices: prismic.SliceZone<NhmEventDocumentDataSlicesSlice>;
 }
 
 /**
- * Event document from Prismic
+ * NHM Event document from Prismic
  *
- * - **API ID**: `event`
+ * - **API ID**: `nhm_event`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/content-modeling
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type EventDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<EventDocumentData>, "event", Lang>;
+export type NhmEventDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<NhmEventDocumentData>,
+    "nhm_event",
+    Lang
+  >;
 
-export type AllDocumentTypes = EventDocument;
+export type AllDocumentTypes = NhmEventDocument;
 
 /**
  * Primary content in *ChurchEvent → Default → Primary*
@@ -238,9 +211,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      EventDocument,
-      EventDocumentData,
-      EventDocumentDataSlicesSlice,
+      NhmEventDocument,
+      NhmEventDocumentData,
+      NhmEventDocumentDataSlicesSlice,
       AllDocumentTypes,
       ChurchEventSlice,
       ChurchEventSliceDefaultPrimary,
