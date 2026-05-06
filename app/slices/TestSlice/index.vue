@@ -1,14 +1,16 @@
-<script
-  setup
-  lang="ts"
->
+<script setup lang="ts">
 import type { Content } from "@prismicio/client";
 
-defineProps(getSliceComponentProps<Content.NhmEventSlice>());
+defineProps(getSliceComponentProps<Content.TestSliceSlice>());
 </script>
 
 <template>
-  <section>
+  <section
+    :data-slice-type="slice.slice_type"
+    :data-slice-variation="slice.variation"
+  >
+    Placeholder component for test_slice (variation: {{ slice.variation }})
+    slices.
 
     <br />
     <strong>You can edit this slice directly in your code editor.</strong>

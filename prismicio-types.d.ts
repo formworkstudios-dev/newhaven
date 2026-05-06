@@ -69,6 +69,71 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
+type EventsDocumentDataSlicesSlice = NhmEventSlice;
+
+/**
+ * Content for Events documents
+ */
+interface EventsDocumentData {
+  /**
+   * Slice Zone field in *Events*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<EventsDocumentDataSlicesSlice> /**
+   * Meta Title field in *Events*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: events.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Events*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: events.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Events*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: events.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Events document from Prismic
+ *
+ * - **API ID**: `events`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type EventsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<EventsDocumentData>,
+    "events",
+    Lang
+  >;
+
 type NhmEventDocumentDataSlicesSlice = NhmEventSlice;
 
 /**
@@ -125,7 +190,7 @@ export type NhmEventDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = NhmEventDocument;
+export type AllDocumentTypes = EventsDocument | NhmEventDocument;
 
 /**
  * Primary content in *NhmEvent → Default → Primary*
@@ -202,6 +267,61 @@ export type NhmEventSlice = prismic.SharedSlice<
   NhmEventSliceVariation
 >;
 
+/**
+ * Primary content in *TestSlice → Default → Primary*
+ */
+export interface TestSliceSliceDefaultPrimary {
+  /**
+   * Title field in *TestSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Test title
+   * - **API ID Path**: test_slice.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *TestSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Short description
+   * - **API ID Path**: test_slice.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for TestSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TestSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TestSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TestSlice*
+ */
+type TestSliceSliceVariation = TestSliceSliceDefault;
+
+/**
+ * TestSlice Shared Slice
+ *
+ * - **API ID**: `test_slice`
+ * - **Description**: Test slice for MCP verification.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TestSliceSlice = prismic.SharedSlice<
+  "test_slice",
+  TestSliceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -223,6 +343,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      EventsDocument,
+      EventsDocumentData,
+      EventsDocumentDataSlicesSlice,
       NhmEventDocument,
       NhmEventDocumentData,
       NhmEventDocumentDataSlicesSlice,
@@ -231,6 +354,10 @@ declare module "@prismicio/client" {
       NhmEventSliceDefaultPrimary,
       NhmEventSliceVariation,
       NhmEventSliceDefault,
+      TestSliceSlice,
+      TestSliceSliceDefaultPrimary,
+      TestSliceSliceVariation,
+      TestSliceSliceDefault,
     };
   }
 }

@@ -5,16 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["@/assets/css/main.css"],
 
-  modules: [
-    "@nuxt/content",
-    "@nuxt/eslint",
-    "@nuxt/image",
-    "@nuxt/ui",
-    "@nuxtjs/seo",
-    "nuxt-swiper",
-    "nuxt-resend",
-    "@nuxtjs/prismic"
-  ],
+  modules: ["@nuxt/content", "@nuxt/eslint", "@nuxt/image", "@nuxt/ui", "@nuxtjs/seo", "nuxt-swiper", "nuxt-resend", "@nuxtjs/prismic", "@nuxtjs/sanity"],
 
   site: {
     url: "https://newhavenministries.org",
@@ -57,6 +48,12 @@ export default defineNuxtConfig({
   },
 
   prismic: {
-    endpoint: apiEndpoint || repositoryName
-  }
+    endpoint: apiEndpoint || repositoryName,
+    clientConfig: {
+      routes: [
+        { type: "homepage", path: "/" }, // example
+        { type: "events", path: "/events2" }, // <-- your Events singleton
+      ],
+    },
+  },
 });

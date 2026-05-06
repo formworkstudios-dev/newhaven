@@ -8,5 +8,10 @@
   "tailwindCSS.classAttributes": ["class", "ui"],
   "tailwindCSS.experimental.classRegex": [
     ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+  ],
+  "chat.mcp.serverSampling": {
+    "newhaven-ministries-2/.vscode/mcp.json: prismic": {
+      "allowedModels": ["copilot/auto"]
+    }
+  }
 }

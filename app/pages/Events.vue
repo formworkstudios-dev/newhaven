@@ -15,6 +15,17 @@ const upcomingEvents = events
 <template>
   <div class="relative overflow-visible">
     <EventsHero />
+    <div class="my-20 bg-indigo-800 flex flex-col">
+      <div>Testing</div>
+      <div>
+        <SliceZone
+          :slices="page.data.slices"
+          :components="defineSliceZoneComponents({
+            events: NhmEvent,
+          })"
+        />
+      </div>
+    </div>
     <UContainer class="py-16 md:py-32 relative z-[100] gap-20">
       <!-- Featured Events Section -->
       <section
