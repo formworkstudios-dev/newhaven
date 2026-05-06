@@ -108,7 +108,7 @@ export const events: Event[] = [
     description:
       "Women's conference. Come experience the Worship, the Prophetic Word, Empowerment and Breakthrough.",
     type: "featured",
-    featured: true,
+    featured: false,
     homepage: true,
     cost: "$75",
   },
@@ -137,7 +137,7 @@ export const events: Event[] = [
     description:
       "Celebrate Love with New Haven Ministries this Valentines day weekend.",
     type: "featured",
-    featured: true,
+    featured: false,
     homepage: true,
   },
   {
@@ -150,7 +150,7 @@ export const events: Event[] = [
     location: "131-10 97 Ave, Richmond Hill",
     description: "Join us for an egg hunt and family fun.",
     type: "featured",
-    featured: true,
+    featured: false,
     homepage: true,
   },
   {
@@ -163,7 +163,7 @@ export const events: Event[] = [
     location: "",
     description: "12 hours outreach prayer worship",
     type: "featured",
-    featured: true,
+    featured: false,
     homepage: true,
   },
   {
@@ -176,7 +176,7 @@ export const events: Event[] = [
     location: "",
     description: "Good Friday Service.",
     type: "featured",
-    featured: true,
+    featured: false,
   },
   {
     id: "easter-sunday-2026",
@@ -188,7 +188,20 @@ export const events: Event[] = [
     location: "",
     description: "Easter Sunday service with New Haven Ministries.",
     type: "featured",
+    featured: false,
+  },
+  {
+    id: "mothers-day-celebration-2026",
+    image: "/events/mothers1.JPG",
+    date: "Sunday, May 10, 2026",
+    time: "10:00 AM",
+    firstOccurrence: "2026-05-10",
+    title: "Mother's Day Celebration",
+    location: "Main Sanctuary",
+    description: "Brunch, Special Guests, Fun, Gifts & More.",
+    type: "featured",
     featured: true,
+    homepage: true,
   },
   {
     id: "monday-night-empowerment",
@@ -212,7 +225,7 @@ export const events: Event[] = [
     location: "",
     description: "Prayer and Worship with New Haven Ministries.",
     type: "featured",
-    featured: true,
+    featured: false,
   },
 ];
 
