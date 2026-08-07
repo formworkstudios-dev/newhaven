@@ -12,7 +12,7 @@ const descRef = ref(null);
 const getInvolvedRef = ref(null);
 
 // Filter events marked for homepage display
-const events = allEvents.filter(event => event.featured);
+const events = allEvents.filter(event => event.homepage);
 
 const activeIndex = ref(0);
 let rotationTimer: ReturnType<typeof setInterval> | undefined;
