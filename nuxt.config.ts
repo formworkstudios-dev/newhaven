@@ -1,11 +1,19 @@
-import { apiEndpoint, repositoryName } from "./slicemachine.config.json";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ["@/assets/css/main.css"],
 
-  modules: ["@nuxt/content", "@nuxt/eslint", "@nuxt/image", "@nuxt/ui", "@nuxtjs/seo", "nuxt-swiper", "nuxt-resend", "@nuxtjs/prismic", "@nuxtjs/sanity"],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/eslint",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "@nuxtjs/seo",
+    "nuxt-swiper",
+    "nuxt-resend",
+    "@nuxtjs/sanity",
+  ],
 
   site: {
     url: "https://newhavenministries.org",
@@ -47,13 +55,10 @@ export default defineNuxtConfig({
     resendApiKey: "",
   },
 
-  prismic: {
-    endpoint: apiEndpoint || repositoryName,
-    clientConfig: {
-      routes: [
-        { type: "homepage", path: "/" }, // example
-        { type: "events", path: "/events2" }, // <-- your Events singleton
-      ],
-    },
+  sanity: {
+    projectId: "jczf5jq8",
+    dataset: "production",
+    useCdn: true,
+    apiVersion: "2024-01-01",
   },
 });

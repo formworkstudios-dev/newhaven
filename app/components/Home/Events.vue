@@ -3,7 +3,8 @@
   lang="ts"
 >
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
-import { events as allEvents } from '~/data/events';
+
+const { events: homepageEvents } = useHomepageEvents();
 
 const showHeading = ref(false);
 const headingRef = ref(null);
@@ -11,18 +12,18 @@ const showDesc = ref(false);
 const descRef = ref(null);
 const getInvolvedRef = ref(null);
 
-// Filter events marked for homepage display
-const events = allEvents.filter(event => event.featured);
+// Use homepage events from Sanity
+const events = computed(() => homepageEvents.value ?? []);
 
 const activeIndex = ref(0);
 let rotationTimer: ReturnType<typeof setInterval> | undefined;
 
-const activeEvent = computed(() => events[activeIndex.value]);
+const activeEvent = computed(() => events.value[activeIndex.value]);
 
 
 const goTo = (index: number) => {
-  if (!events.length) return;
-  activeIndex.value = ((index % events.length) + events.length) % events.length;
+  if (!events.value.length) return;
+  activeIndex.value = ((index % events.value.length) + events.value.length) % events.value.length;
 };
 
 const next = () => {
@@ -35,7 +36,7 @@ const prev = () => {
 
 
 onMounted(() => {
-  if (events.length <= 1) return;
+  if (events.value.length <= 1) return;
   rotationTimer = setInterval(next, 6000);
 });
 

@@ -4,28 +4,20 @@
 >
 import EventCardAlt from '~/components/Shared/EventCardAlt.vue';
 import EventsHero from '~/components/Events/Hero.vue';
-import { events } from '~/data/events';
+import type { SanityEvent } from '~/composables/useEvents';
 
-const ongoingEvents = events.filter(e => e.type === 'ongoing' || e.type === 'weekly');
-const upcomingEvents = events
-  .filter(e => e.featured === true)
-  .sort((a, b) => a.firstOccurrence.localeCompare(b.firstOccurrence));
+const { events: ongoingEventsRaw } = useOngoingEvents();
+const { events: featuredEventsRaw } = useFeaturedEvents();
+
+const ongoingEvents = computed(() => ongoingEventsRaw.value ?? []);
+const upcomingEvents = computed(() =>
+  (featuredEventsRaw.value ?? []).slice().sort((a: SanityEvent, b: SanityEvent) => a.firstOccurrence.localeCompare(b.firstOccurrence))
+);
 </script>
 
 <template>
   <div class="relative overflow-visible">
     <EventsHero />
-    <div class="my-20 bg-indigo-800 flex flex-col">
-      <div>Testing</div>
-      <div>
-        <SliceZone
-          :slices="page.data.slices"
-          :components="defineSliceZoneComponents({
-            events: NhmEvent,
-          })"
-        />
-      </div>
-    </div>
     <UContainer class="py-16 md:py-32 relative z-[100] gap-20">
       <!-- Featured Events Section -->
       <section
@@ -36,11 +28,8 @@ const upcomingEvents = events
         <div class="flex flex-col gap-6 w-full items-stretch">
           <EventCardAlt
             v-for="event in upcomingEvents"
-            :key="event.id"
-            v-bind="event"
-          />
-        </div>
-      </section>
+            :key="event._id"
+            v-bind="{ ...event, image: event.image ?? '', location: event.location ?? '' }"
 
       <!-- Ongoing Events Section -->
       <h3 class="text-left text-3xl font-bold text-secondary pb-8">Ongoing at NHM</h3>
@@ -49,11 +38,8 @@ const upcomingEvents = events
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto">
           <EventCardAlt
             v-for="event in ongoingEvents"
-            :key="event.id"
-            v-bind="event"
-          />
-        </div>
-      </div>
+            :key="event._id"
+            v-bind="{ ...event, image: event.image ?? '', location: event.location ?? '' }"
     </UContainer>
   </div>
 </template>
