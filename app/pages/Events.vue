@@ -30,16 +30,21 @@ const upcomingEvents = computed(() =>
             v-for="event in upcomingEvents"
             :key="event._id"
             v-bind="{ ...event, image: event.image ?? '', location: event.location ?? '' }"
+          />
+        </div>
+      </section>
 
       <!-- Ongoing Events Section -->
       <h3 class="text-left text-3xl font-bold text-secondary pb-8">Ongoing at NHM</h3>
       <div class="flex flex-col gap-12 items-stretch overflow-visible">
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto">
           <EventCardAlt
             v-for="event in ongoingEvents"
             :key="event._id"
             v-bind="{ ...event, image: event.image ?? '', location: event.location ?? '' }"
+          />
+        </div>
+      </div>
     </UContainer>
   </div>
 </template>
